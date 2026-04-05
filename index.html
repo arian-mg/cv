@@ -3,681 +3,483 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Arian Morales Guedes | Informático Corporativo</title>
+    <title>CV - Arian Morales Guedes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ============================================
-           ESTILOS GENERALES - DISEÑO LIMPIO 2026
-           ============================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #2c3e50;
+            --accent: #2980b9;
+            --bg: #f4f5f5;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #dcdcdc;
+            --muted: #888888;
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #f8f9fa;
-            padding: 40px 20px;
-            min-height: 100vh;
+            font-family: 'Open Sans', 'Calibri', sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg);
+            padding: 25px 15px;
         }
 
         .cv-container {
-            max-width: 210mm;
+            max-width: 800px;
             margin: 0 auto;
-            background: #ffffff;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--accent);
         }
 
-        /* ============================================
-           ENCABEZADO CON FOTO - ESTILO NEUTRO
-           ============================================ */
         .header {
-            background: #ffffff;
-            color: #2c3e50;
-            padding: 40px;
+            padding: 30px 35px 25px;
             display: flex;
             align-items: center;
-            gap: 30px;
-            border-bottom: 2px solid #e2e8f0;
-            position: relative;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 40px;
-            right: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, #4a6fa5, #6b8cbc);
-            opacity: 0.6;
+            gap: 25px;
+            border-bottom: 1px solid var(--border);
         }
 
         .photo-container {
-            flex-shrink: 0;
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid #f1f5f9;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background: #ffffff;
+            border: 3px solid var(--border);
         }
 
         .photo-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
-        .header-content {
-            flex: 1;
-        }
+        .header-content { flex: 1; }
 
         .header h1 {
-            font-size: 2.2em;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-            color: #1a252f;
+            color: var(--primary);
+            margin-bottom: 3px;
         }
 
         .header .title {
-            font-size: 1.1em;
-            font-weight: 400;
-            color: #4a6fa5;
-            margin-bottom: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
 
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
-            font-size: 0.9em;
-            color: #4a5568;
+            gap: 14px;
+            font-size: 0.8rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        .contact-item svg {
-            width: 16px;
-            height: 16px;
-            fill: #4a6fa5;
+            gap: 5px;
+            color: var(--text-light);
         }
 
         .contact-item a {
-            color: #2c3e50;
+            color: var(--text-light);
             text-decoration: none;
-            transition: color 0.2s ease;
         }
 
         .contact-item a:hover {
-            color: #4a6fa5;
+            color: var(--accent);
         }
 
-        /* ============================================
-           SECCIONES DEL CV
-           ============================================ */
-        .main-content {
-            padding: 40px;
-        }
+        .main-content { padding: 25px 35px; }
 
-        .section {
-            margin-bottom: 35px;
-        }
+        .section { margin-bottom: 22px; }
+
+        .section:last-child { margin-bottom: 0; }
 
         .section-title {
-            font-size: 1.3em;
+            font-size: 0.8rem;
             font-weight: 700;
-            color: #1a252f;
-            margin-bottom: 18px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
         }
 
-        .section-title svg {
-            width: 22px;
-            height: 22px;
-            fill: #4a6fa5;
-        }
-
-        /* ============================================
-           VALOR DIFERENCIAL - NUEVA SECCIÓN
-           ============================================ */
         .value-proposition {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #4a6fa5;
-            margin-bottom: 30px;
+            background: #f9f9f9;
+            padding: 15px 18px;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 20px;
         }
 
         .value-proposition h3 {
-            font-size: 1.05em;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: #1a252f;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .value-proposition h3 svg {
-            width: 20px;
-            height: 20px;
-            fill: #4a6fa5;
+            color: var(--primary);
+            margin-bottom: 8px;
         }
 
         .value-proposition p {
-            font-size: 0.95em;
-            color: #4a5568;
-            line-height: 1.7;
-            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 6px;
         }
+
+        .value-proposition p:last-child { margin-bottom: 0; }
 
         .value-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 5px;
+            margin-top: 10px;
         }
 
         .value-tag {
-            background: #e2e8f0;
-            color: #2c3e50;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 500;
+            background: var(--white);
+            color: var(--text-light);
+            padding: 3px 9px;
+            border-radius: 2px;
+            font-size: 0.7rem;
+            border: 1px solid var(--border);
         }
 
-        /* ============================================
-           RESUMEN PROFESIONAL
-           ============================================ */
         .summary {
-            background: #f8fafc;
-            padding: 22px;
-            border-radius: 8px;
-            border-left: 3px solid #cbd5e1;
-            font-size: 0.95em;
-            line-height: 1.7;
-            color: #4a5568;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-light);
         }
 
-        /* ============================================
-           EXPERIENCIA LABORAL
-           ============================================ */
+        .summary strong { color: var(--text); }
+
         .experience-item {
-            margin-bottom: 22px;
-            padding-left: 18px;
-            border-left: 2px solid #e2e8f0;
-            transition: border-color 0.2s ease;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eeeeee;
         }
 
-        .experience-item:hover {
-            border-left-color: #4a6fa5;
+        .experience-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 8px;
+            align-items: baseline;
+            margin-bottom: 5px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 5px;
         }
 
         .experience-title {
-            font-size: 1.05em;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: #1a252f;
+            color: var(--text);
+        }
+
+        .experience-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .experience-title a:hover {
+            color: var(--accent);
         }
 
         .experience-company {
-            font-size: 0.95em;
-            color: #4a6fa5;
-            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .experience-date {
-            font-size: 0.85em;
-            color: #718096;
-            background: #f1f5f9;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 500;
+            font-size: 0.75rem;
+            color: var(--muted);
         }
 
         .experience-location {
-            font-size: 0.85em;
-            color: #718096;
-            margin-bottom: 10px;
-            font-style: italic;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 8px;
         }
 
         .experience-description {
-            font-size: 0.9em;
-            color: #4a5568;
-            line-height: 1.6;
+            font-size: 0.8rem;
+            color: var(--text-light);
         }
 
         .experience-description ul {
             list-style: none;
-            margin-top: 8px;
+            margin-top: 5px;
         }
 
         .experience-description li {
             position: relative;
-            padding-left: 18px;
-            margin-bottom: 6px;
+            padding-left: 12px;
+            margin-bottom: 3px;
         }
 
         .experience-description li::before {
-            content: '▸';
+            content: '•';
             position: absolute;
             left: 0;
-            color: #4a6fa5;
-            font-weight: bold;
+            color: var(--accent);
         }
 
-        /* ============================================
-           PROYECTOS DESTACADOS
-           ============================================ */
         .projects-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
         .project-card {
-            background: #f8fafc;
-            padding: 18px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            background: #fafafa;
+            padding: 12px 14px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
         }
 
         .project-title {
-            font-size: 0.95em;
+            font-size: 0.8rem;
             font-weight: 600;
-            color: #1a252f;
-            margin-bottom: 6px;
+            color: var(--text);
+            margin-bottom: 3px;
         }
 
-        .project-meta {
-            font-size: 0.85em;
-            color: #4a6fa5;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .project-description {
-            font-size: 0.9em;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           EDUCACIÓN
-           ============================================ */
-        .education-item {
-            background: #f8fafc;
-            padding: 18px;
-            border-radius: 8px;
-            border-left: 3px solid #6b8cbc;
-        }
-
-        .education-degree {
-            font-size: 1em;
-            font-weight: 600;
-            color: #1a252f;
-            margin-bottom: 4px;
-        }
-
-        .education-school {
-            font-size: 0.95em;
-            color: #4a6fa5;
-            margin-bottom: 4px;
-        }
-
-        .education-date {
-            font-size: 0.85em;
-            color: #718096;
-            margin-bottom: 10px;
-        }
-
-        .education-details {
-            font-size: 0.9em;
-            color: #4a5568;
-        }
-
-        .education-details ul {
-            list-style: none;
-            margin-top: 8px;
-        }
-
-        .education-details li {
-            position: relative;
-            padding-left: 18px;
-            margin-bottom: 5px;
-        }
-
-        .education-details li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #4a6fa5;
-            font-weight: bold;
-        }
-
-        /* ============================================
-           HABILIDADES TÉCNICAS
-           ============================================ */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 18px;
-        }
-
-        .skill-category {
-            background: #f8fafc;
-            padding: 18px;
-            border-radius: 8px;
-            border-top: 3px solid #6b8cbc;
-        }
-
-        .skill-category h4 {
-            font-size: 0.95em;
-            font-weight: 600;
-            color: #1a252f;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .skill-category h4 svg {
-            width: 18px;
-            height: 18px;
-            fill: #4a6fa5;
-        }
-
-        .skill-category p {
-            font-size: 0.85em;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           IDIOMAS
-           ============================================ */
-        .languages-container {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .language-item {
-            flex: 1;
-            min-width: 180px;
-            background: #f8fafc;
-            padding: 14px 18px;
-            border-radius: 8px;
-            border-left: 3px solid #6b8cbc;
-        }
-
-        .language-name {
-            font-size: 0.95em;
-            font-weight: 600;
-            color: #1a252f;
-            margin-bottom: 4px;
-        }
-
-        .language-level {
-            font-size: 0.85em;
-            color: #4a5568;
-        }
-
-        /* ============================================
-           REFERENCIAS LABORALES
-           ============================================ */
-        .references-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 14px;
-        }
-
-        .reference-card {
-            background: #f8fafc;
-            padding: 14px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            transition: border-color 0.2s ease;
-        }
-
-        .reference-card:hover {
-            border-color: #4a6fa5;
-        }
-
-        .reference-name {
-            font-size: 0.95em;
-            font-weight: 600;
-            color: #1a252f;
-            margin-bottom: 4px;
-        }
-
-        .reference-position {
-            font-size: 0.85em;
-            color: #4a6fa5;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-
-        .reference-contact {
-            font-size: 0.8em;
-            color: #718096;
-        }
-
-        .reference-contact a {
-            color: #4a6fa5;
+        .project-title a {
+            color: var(--text);
             text-decoration: none;
         }
 
-        .reference-contact a:hover {
+        .project-title a:hover {
+            color: var(--accent);
             text-decoration: underline;
         }
 
-        /* ============================================
-           PIE DE PÁGINA
-           ============================================ */
-        .footer {
-            background: #f1f5f9;
-            color: #4a5568;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.85em;
+        .project-meta {
+            font-size: 0.7rem;
+            color: var(--accent);
+            margin-bottom: 5px;
         }
 
-        .footer p {
+        .project-description {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .education-item {
+            background: #fafafa;
+            padding: 12px 14px;
+            border-radius: 3px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .education-degree {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .education-school {
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        .education-date {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .education-details {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .education-details ul { list-style: none; margin-top: 4px; }
+        .education-details li { margin-bottom: 2px; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .skill-category {
+            background: #fafafa;
+            padding: 10px 12px;
+            border-radius: 3px;
+            border-top: 2px solid var(--accent);
+        }
+
+        .skill-category h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .skill-category p {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .skill-category p a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .skill-category p a:hover {
+            text-decoration: underline;
+        }
+
+        .languages-container { display: flex; gap: 14px; }
+
+        .language-item {
+            background: #fafafa;
+            padding: 8px 12px;
+            border-radius: 3px;
+            border-left: 2px solid var(--accent);
+        }
+
+        .language-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .language-level {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .reference-card {
+            background: #fafafa;
+            padding: 10px 12px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+        }
+
+        .reference-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .reference-position {
+            font-size: 0.7rem;
+            color: var(--accent);
             margin-bottom: 4px;
+            font-weight: 600;
         }
 
-        .footer strong {
-            color: #1a252f;
+        .reference-contact {
+            font-size: 0.65rem;
+            color: var(--text-light);
         }
 
-        /* ============================================
-           RESPONSIVE DESIGN
-           ============================================ */
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 10px;
-            }
-
-            .header {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-
-            .photo-container {
-                width: 120px;
-                height: 120px;
-            }
-
-            .header h1 {
-                font-size: 1.8em;
-            }
-
-            .contact-info {
-                justify-content: center;
-            }
-
-            .main-content {
-                padding: 25px;
-            }
-
-            .experience-header {
-                flex-direction: column;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .references-grid {
-                grid-template-columns: 1fr;
-            }
+        .reference-contact a {
+            color: var(--accent);
+            text-decoration: none;
         }
 
-        /* ============================================
-           PRINT STYLES
-           ============================================ */
+        .footer {
+            background: #f9f9f9;
+            color: var(--text-light);
+            text-align: center;
+            padding: 14px 18px;
+            font-size: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer strong { color: var(--text); }
+
+        @media (max-width: 700px) {
+            body { padding: 10px; }
+            .header { flex-direction: column; text-align: center; padding: 22px 18px; }
+            .photo-container { width: 90px; height: 90px; }
+            .contact-info { justify-content: center; }
+            .main-content { padding: 18px; }
+            .projects-grid, .skills-grid, .references-grid { grid-template-columns: 1fr; }
+        }
+
         @media print {
-            body {
-                background: #ffffff;
-                padding: 0;
-            }
-
-            .cv-container {
-                box-shadow: none;
-                max-width: 100%;
-            }
+            :root { --bg: #ffffff; --white: #ffffff; --border: #cccccc; }
+            body { background: var(--bg); padding: 0; font-size: 10pt; }
+            .cv-container { box-shadow: none; border: 1px solid var(--border); }
         }
     </style>
 </head>
 <body>
     <div class="cv-container">
-        <!-- ============================================
-             ENCABEZADO CON FOTO
-             ============================================ -->
         <header class="header">
             <div class="photo-container">
-                <img src="yo2026.jpg" alt="Arian Morales Guedes - Foto Profesional">
+                <img src="yo2026.jpg" alt="Arian Morales Guedes">
             </div>
             <div class="header-content">
                 <h1>Arian Morales Guedes</h1>
-                <p class="title">Informático Corporativo | Ingeniero Electricista | Infraestructura Tecnológica Hotelera</p>
+                <p class="title">Ingeniero Electricista + Informático Hotelero</p>
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                        <span>La Habana, Cuba</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        <a href="tel:+5352593370">+53 5 2593370</a>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        <a href="mailto:arianmorales@gmail.com">arianmorales@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.3a.75.75 0 0 0-.75-.75H11c-.41 0-.75.34-.75.75v8.75h3.5v-5.3c0-.41.34-.75.75-.75s.75.34.75.75v5.3h3.5M7.5 18.5H11v-8.75H7.5v8.75z"/></svg>
-                        <a href="https://linkedin.com/in/amorales2" target="_blank">linkedin.com/in/amorales2</a>
-                    </div>
+                    <span class="contact-item">La Habana, Cuba</span>
+                    <a class="contact-item" href="tel:+5352593370">+53 5 2593370</a>
+                    <a class="contact-item" href="mailto:arianmorales@gmail.com">arianmorales@gmail.com</a>
+                    <a class="contact-item" href="https://www.linkedin.com/in/arianmoralesguedes/" target="_blank">LinkedIn</a>
+                    <a class="contact-item" href="https://arianmorales.github.io/cv/" target="_blank">CV Online</a>
                 </div>
             </div>
         </header>
 
-        <!-- ============================================
-             CONTENIDO PRINCIPAL
-             ============================================ -->
         <main class="main-content">
-            
-            <!-- VALOR DIFERENCIAL - NUEVA SECCIÓN -->
             <section class="section">
-                <div class="value-proposition">
-                    <h3>
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        Perfil Híbrido: Electricidad + IT + Sector Hotelero
-                    </h3>
-                    <p>Mi trayectoria combina formación en ingeniería eléctrica con experiencia práctica en sistemas informáticos y operaciones hoteleras. Esta convergencia me permite abordar desafíos técnicos desde una perspectiva integral, entendiendo tanto la infraestructura física como la lógica que la hace funcionar.</p>
-                    <p>En un contexto donde la infraestructura crítica hotelera requiere especialistas que comprendan múltiples capas tecnológicas, esta combinación de conocimientos representa un enfoque práctico para garantizar continuidad operativa, eficiencia energética y escalabilidad tecnológica.</p>
-                    <p>Adicionalmente, incorporo herramientas de inteligencia artificial para optimizar procesos de documentación, análisis técnico y automatización de tareas repetitivas, siempre con validación humana y enfoque en resultados operativos.</p>
-                    <div class="value-tags">
-                        <span class="value-tag">Infraestructura Crítica</span>
-                        <span class="value-tag">Redes + Electricidad</span>
-                        <span class="value-tag">Hospitality Tech</span>
-                        <span class="value-tag">IA Aplicada</span>
-                        <span class="value-tag">Continuidad Operativa</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- RESUMEN PROFESIONAL -->
-            <section class="section">
-                <h2 class="section-title">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                    Resumen Profesional
-                </h2>
+                <h2 class="section-title">Resumen Profesional</h2>
                 <div class="summary">
-                    <p>Ingeniero Electricista con más de 15 años de experiencia en entornos técnicos multidisciplinarios, abarcando desde la ingeniería eléctrica hasta la gestión de sistemas informáticos, telemáticos y de automatización. Durante más de 8 años he aplicado este conocimiento al sector hotelero y de hospitalidad, con un enfoque en la operación segura, el cumplimiento normativo y la continuidad del negocio, minimizando tiempos de interrupción.</p>
+                    <p>Ingeniero Electricista graduado en 2007, con más de 8 años de experiencia en el sector hotelero internacional y un perfil híbrido que combina gestión administrativa, operaciones hoteleras y sistemas informáticos corporativos. Esta formación mixta me permite comprender tanto la infraestructura física como los sistemas tecnológicos que garantizan la continuidad y seguridad de las operaciones. Utilizo herramientas de inteligencia artificial para documentar procesos y automatizar tareas.</p>
                     <br>
-                    <p>Actualmente me desempeño como <strong>Informático Corporativo</strong> en Archipelago International – Cuba, donde coordino la implementación de estándares tecnológicos en los seis hoteles de la cadena en el país. Además, brindo soporte remoto a la oficina regional en Punta Cana (República Dominicana) y al equipo operativo en México.</p>
+                    <p>Inicié mi trayectoria en Archipelago International Cuba como Informático del Hotel Grand Aston Cayo Las Brujas, donde gestioné sistemas de redes, telemática y soporte operativo. Posteriormente pasé al Hotel Grand Aston La Habana, ampliando mi experiencia en infraestructura tecnológica y soporte a operaciones hoteleras de gran escala. Más adelante asumí el rol de Asistente Administrativo Corporativo, apoyando directamente a la Dirección de Operaciones en comunicación corporativa, procesos migratorios, contratación de personal extranjero y documentación legal y técnica para aperturas de hoteles.</p>
+                    <br>
+                    <p>Actualmente desempeño funciones como Informático Corporativo (contratado por ACOREC), supervisando y asesorando la infraestructura informática en seis hoteles de Cuba, gestionando mejoras tecnológicas y asegurando continuidad operativa en casos de vacantes. A nivel internacional, participo en proyectos en República Dominicana, brindando asesoramiento y capacitación remota para aperturas y ofreciendo asistencia remota continua a dos propiedades abiertas en Punta Cana, sirviendo de puente entre usuarios y el helpdesk corporativo de IT.</p>
                 </div>
             </section>
 
-            <!-- EXPERIENCIA PROFESIONAL -->
             <section class="section">
-                <h2 class="section-title">
-                    <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
-                    Experiencia Profesional
-                </h2>
+                <h2 class="section-title">Experiencia Profesional</h2>
 
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
                             <div class="experience-title">Informático Corporativo</div>
-                            <div class="experience-company">Archipelago International</div>
+                            <div class="experience-company">Archipelago International – Cuba</div>
                         </div>
                         <div class="experience-date">Mayo 2023 – Actualidad</div>
                     </div>
                     <div class="experience-location">La Habana, Cuba</div>
                     <div class="experience-description">
                         <ul>
-                            <li>Coordino y capacito al personal técnico de seis hoteles en Cuba para implementar los estándares tecnológicos corporativos.</li>
-                            <li>Asumo responsabilidades técnicas en propiedades sin especialistas, supervisando instalaciones eléctricas, centros de datos, sistemas de monitoreo y documentación conforme a las normas cubanas.</li>
-                            <li>Imparto formación en informática, telemática y automática, y gestiono integraciones con empresas nacionales como Copextel, GET y ETECSA.</li>
-                            <li>Brindo soporte remoto a la oficina regional en Punta Cana (República Dominicana), al equipo operativo en México y a las propiedades en apertura en República Dominicana.</li>
+                            <li>Supervisión y asesoramiento de infraestructura informática en seis hoteles de la cadena en Cuba.</li>
+                            <li>Soporte remoto a propiedades en República Dominicana: resolución de incidencias y coordinación con helpdesk corporativo.</li>
+                            <li>Asesoramiento y capacitación remota en proyectos internacionales en RD: preparación tecnológica para aperturas (WiFi, AP, TV IP, Google Workspace).</li>
+                            <li>Gestión de mejoras tecnológicas: optimización de redes, aplicaciones hoteleras y soluciones telemáticas.</li>
+                            <li>Asunción temporal de funciones de informáticos en hoteles con vacantes.</li>
+                            <li>Desarrollo de herramientas de monitoreo en tiempo real con Python y SQL.</li>
+                            <li>Colaboración con equipos corporativos: administración, redes sociales, comercial y dirección de operaciones.</li>
                         </ul>
                     </div>
                 </div>
@@ -686,16 +488,22 @@
                     <div class="experience-header">
                         <div>
                             <div class="experience-title">Asistente Administrativo Corporativo</div>
-                            <div class="experience-company">Archipelago International</div>
+                            <div class="experience-company">Archipelago International – Cuba</div>
                         </div>
                         <div class="experience-date">Noviembre 2022 – Mayo 2023</div>
                     </div>
                     <div class="experience-location">La Habana, Cuba</div>
                     <div class="experience-description">
                         <ul>
-                            <li>Facilité la comunicación entre la oficina central y las direcciones generales de los hoteles, bajo supervisión de la Dirección de Operaciones.</li>
-                            <li>Asistí en la contratación de personal nacional y extranjero, gestionando trámites migratorios y administrativos conforme a la normativa vigente.</li>
-                            <li>Supervisé la documentación técnica y legal para la apertura de la oficina corporativa en La Habana.</li>
+                            <li>Apoyo directo al Director de Operaciones en gestiones administrativas y corporativas.</li>
+                            <li>Organización de agenda, coordinación de reuniones y comunicaciones.</li>
+                            <li>Correspondencia oficial, informes y documentación corporativa.</li>
+                            <li>Coordinación logística de viajes, eventos y actividades corporativas.</li>
+                            <li>Contratación de personal extranjero: trámites migratorios, laborales y de visas.</li>
+                            <li>Gestión de permisos en instituciones cubanas reguladas.</li>
+                            <li>Coordinación de trámites en embajadas y aeropuertos para personal internacional.</li>
+                            <li>Funciones de RRHH: selección, incorporación y seguimiento de personal.</li>
+                            <li>Supervisión de archivos físicos y digitales.</li>
                         </ul>
                     </div>
                 </div>
@@ -703,7 +511,7 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <div class="experience-title">Informático Hotel</div>
+                            <div class="experience-title"><a href="https://www.astonhotelsinternational.com/en/hotel/view/86/galh" target="_blank">Informático Hotel</a></div>
                             <div class="experience-company">Grand Aston La Habana</div>
                         </div>
                         <div class="experience-date">Junio 2022 – Noviembre 2022</div>
@@ -711,9 +519,15 @@
                     <div class="experience-location">La Habana, Cuba</div>
                     <div class="experience-description">
                         <ul>
-                            <li>Administré la infraestructura tecnológica del hotel, abarcando servidores, redes, conectividad WiFi, plataformas IPTV, telefonía IP y sistemas de audio IP.</li>
-                            <li>Supervisé las instalaciones eléctricas en cuartos técnicos y centro de datos, elaborando documentación conforme a regulaciones nacionales.</li>
-                            <li>Participé en la apertura del hotel, considerado en su momento uno de los más avanzados tecnológicamente del país, con 600 habitaciones y más de 1,000 dispositivos de red.</li>
+                            <li>Participación en la apertura del hotel más tecnológico de Cuba en su momento.</li>
+                            <li>Administración de 600 habitaciones con switch, AP WiFi, teléfonos IP y Smart TV IP.</li>
+                            <li>Gestión de red centralizada con switch core Capa 3 en stack.</li>
+                            <li>Servidores virtualizados con VMware (tecnologías Cisco, Huawei, D-Link, Mikrotik).</li>
+                            <li>Controladora Nuclias Connect y Active Directory con políticas GPO.</li>
+                            <li>Desarrollo de sistemas de monitoreo en tiempo real con Python y SQL.</li>
+                            <li>Administración de PMS, aplicaciones hoteleras y SQL Server.</li>
+                            <li>Soporte de telefonía IP, TV interna, cerraduras Inhova y correo Zimbra.</li>
+                            <li>Soporte técnico en español e inglés.</li>
                         </ul>
                     </div>
                 </div>
@@ -729,8 +543,14 @@
                     <div class="experience-location">Villa Clara, Cuba</div>
                     <div class="experience-description">
                         <ul>
-                            <li>Administré la infraestructura tecnológica del hotel, aplicando protocolos de seguridad y supervisando adecuaciones eléctricas conforme a normas cubanas.</li>
-                            <li>Brindé soporte técnico integral, asegurando la estabilidad operativa de los sistemas informáticos.</li>
+                            <li>Administración de 4 servidores HP ProLiant virtualizados con Hyper-V y VMware.</li>
+                            <li>Gestión de dominio Windows, Active Directory y políticas GPO.</li>
+                            <li>Administración de SQL Server, PMS y aplicaciones de hotelería.</li>
+                            <li>Configuración de switches y puntos de acceso WiFi.</li>
+                            <li>Implementación y soporte de servidor de correo Zimbra.</li>
+                            <li>Soporte a sistemas de TV, telefonía y red de datos.</li>
+                            <li>Mantenimiento de cerraduras magnéticas Inhova.</li>
+                            <li>Soporte técnico a usuarios en español e inglés.</li>
                         </ul>
                     </div>
                 </div>
@@ -746,8 +566,12 @@
                     <div class="experience-location">Ciego de Ávila, Cuba</div>
                     <div class="experience-description">
                         <ul>
-                            <li>Administré servidores de base de datos Oracle y sistemas de cliente ligero, implementando soluciones de red para mejorar la fiabilidad de la infraestructura.</li>
-                            <li>Elaboré documentación técnica conforme a regulaciones estatales y aseguré la protección de datos institucionales.</li>
+                            <li>Administración de tres servidores y una red de 10 clientes ligeros.</li>
+                            <li>Gestión de bases de datos Oracle.</li>
+                            <li>Configuración y mantenimiento de entornos Windows con Active Directory.</li>
+                            <li>Gestión de usuarios, permisos y políticas de seguridad en la red corporativa.</li>
+                            <li>Mantenimiento preventivo y correctivo de hardware y software.</li>
+                            <li>Respaldo de información y soporte técnico a usuarios en tareas cotidianas.</li>
                         </ul>
                     </div>
                 </div>
@@ -755,7 +579,7 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <div class="experience-title">Supervisor de Generadores de Emergencia</div>
+                            <div class="experience-title">Supervisor de Grupos Electrógenos de Emergencia</div>
                             <div class="experience-company">Empresa Eléctrica de Cuba</div>
                         </div>
                         <div class="experience-date">Diciembre 2010 – Febrero 2015</div>
@@ -763,8 +587,10 @@
                     <div class="experience-location">Ciego de Ávila, Cuba</div>
                     <div class="experience-description">
                         <ul>
-                            <li>Supervisé la operación de grupos electrógenos en infraestructuras críticas, verificando el cumplimiento de normas de seguridad eléctrica y planes de mantenimiento.</li>
-                            <li>Garanticé su disponibilidad y respuesta ante situaciones de emergencia.</li>
+                            <li>Coordinación y supervisión de la operación de grupos electrógenos en instalaciones críticas.</li>
+                            <li>Control de mantenimientos preventivos y correctivos para garantizar disponibilidad continua.</li>
+                            <li>Monitoreo de parámetros eléctricos y gestión de incidencias en sistemas de respaldo.</li>
+                            <li>Organización de brigadas técnicas y verificación del cumplimiento de normas de seguridad.</li>
                         </ul>
                     </div>
                 </div>
@@ -772,7 +598,7 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
-                            <div class="experience-title">Especialista en Redes y Sistemas Eléctricos</div>
+                            <div class="experience-title">Especialista Eléctrico</div>
                             <div class="experience-company">Empresa Eléctrica de Cuba</div>
                         </div>
                         <div class="experience-date">Octubre 2007 – Noviembre 2010</div>
@@ -780,155 +606,120 @@
                     <div class="experience-location">Ciego de Ávila, Cuba</div>
                     <div class="experience-description">
                         <ul>
-                            <li>Diseñé redes de distribución eléctrica en AutoCAD (media y baja tensión), elaboré proyectos y presupuestos conforme a normas cubanas.</li>
-                            <li>Supervisé instalaciones eléctricas verificando su ejecución técnica.</li>
+                            <li>Elaboración de planos eléctricos en AutoCAD para líneas y subestaciones de alta tensión.</li>
+                            <li>Apoyo en el diseño y documentación técnica de proyectos eléctricos.</li>
+                            <li>Revisión de planos y memorias técnicas conforme a normas nacionales e internacionales.</li>
+                            <li>Coordinación con equipos de campo para validar diseños y asegurar su viabilidad.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- PROYECTOS DESTACADOS -->
             <section class="section">
-                <h2 class="section-title">
-                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                    Proyectos Destacados
-                </h2>
+                <h2 class="section-title">Proyectos Destacados</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-title">Hotel Grand Aston La Habana – Apertura Marzo 2022</div>
-                        <div class="project-meta">600 habitaciones | +1,000 dispositivos de red</div>
-                        <div class="project-description">
-                            Especialista principal informático en la apertura tecnológica del hotel. Administración integral de servidores, virtualización, redes WiFi, IPTV, telefonía IP, cerraduras electrónicas y música IP.
-                        </div>
+                        <div class="project-title"><a href="https://www.astonhotelsinternational.com/en/hotel/view/86/galh" target="_blank">Grand Aston La Habana – 2022</a></div>
+                        <div class="project-meta">600 habitaciones | +1,000 dispositivos</div>
+                        <div class="project-description">Participación en la apertura como informático. Sistemas: servidores, UPS, WiFi, AP Switch, IPTV, hilo musical, CCTV, telefonia IP, cerraduras magnéticas.</div>
                     </div>
-
                     <div class="project-card">
-                        <div class="project-title">Hotel Grand Aston Cayo Paredón – Apertura Noviembre 2022</div>
-                        <div class="project-meta">635 habitaciones | +1,100 dispositivos de red</div>
-                        <div class="project-description">
-                            Asesoría y capacitación técnica en redes GPON, fibra óptica, servidores, virtualización, IPTV, telefonía IP, WiFi, sistemas de acceso y seguridad. Supervisión de documentación técnica y cumplimiento normativo.
-                        </div>
+                        <div class="project-title"><a href="https://www.astonhotelsinternational.com/en/hotel/view/95/gacpbr" target="_blank">Grand Aston Cayo Paredón – 2022</a></div>
+                        <div class="project-meta">635 habitaciones | +1,100 dispositivos</div>
+                        <div class="project-description">Asesoría técnica. Sistemas: redes, servidores, UPS, WiFi, AP Switch, IPTV, hilo musical, CCTV, telefonia IP, cerraduras magnéticas.</div>
                     </div>
-
                     <div class="project-card">
-                        <div class="project-title">Oficina Corporativa Archipelago – La Habana – Apertura Marzo 2023</div>
-                        <div class="project-meta">Sede Corporativa Regional</div>
-                        <div class="project-description">
-                            Miembro del equipo fundador de la sede corporativa en Cuba. Soporte integral en implementación de sistemas de gestión, infraestructura tecnológica y coordinación operativa con propiedades hoteleras.
-                        </div>
+                        <div class="project-title">Oficina Corporativa La Habana – 2023</div>
+                        <div class="project-meta">Sede Regional</div>
+                        <div class="project-description">Parte del equipo fundador. Soporte en sistemas y coordinación con los hoteles.</div>
                     </div>
-
                     <div class="project-card">
-                        <div class="project-title">Hotel Grand Aston Varadero – Apertura Noviembre 2023</div>
-                        <div class="project-meta">531 habitaciones | +950 dispositivos de red</div>
-                        <div class="project-description">
-                            Asesoría y formación en administración de redes, configuración de servidores, telefonía IP, IPTV, música IP y seguridad informática. Coordinación de documentación de instalación y validación técnica.
-                        </div>
+                        <div class="project-title"><a href="https://www.astonhotelsinternational.com/en/hotel/view/85/gavbr" target="_blank">Grand Aston Varadero – 2023</a></div>
+                        <div class="project-meta">531 habitaciones</div>
+                        <div class="project-description">Capacitación al equipo local. Sistemas: redes, servidores, UPS, WiFi, IPTV, hilo musical, CCTV, telefonia IP, cerraduras magnéticas.</div>
                     </div>
-
                     <div class="project-card">
-                        <div class="project-title">Oficina Corporativa Archipelago – Punta Cana, RD – Apertura Mayo 2024</div>
-                        <div class="project-meta">Infraestructura Cisco Meraki en la Nube</div>
-                        <div class="project-description">
-                            Asesoría remota en redes eléctricas y de datos, telefonía IP, diseño en AutoCAD, presupuestos para equipamiento informático. Instalación remota de equipos, sistemas IPTV y sala de conferencias.
-                        </div>
+                        <div class="project-title"><a href="https://maps.app.goo.gl/cVVzCn6e7DBSDwkt5" target="_blank">Oficina Punta Cana (RD) – 2024</a></div>
+                        <div class="project-meta">Soporte Remoto</div>
+                        <div class="project-description">Apoyo remoto en redes, IPTV y configuración de sala de conferencias.</div>
                     </div>
-
                     <div class="project-card">
-                        <div class="project-title">Reserva Real by Harper – Bávaro, RD – Apertura Agosto 2025</div>
-                        <div class="project-meta">Sistema de Gestión SENTEC</div>
-                        <div class="project-description">
-                            Asesoría remota en apertura tecnológica, coordinación de adquisiciones, administración de instalación de equipos con sistema SENTEC, capacitación de personal y supervisión de cerraduras electrónicas TESA.
-                        </div>
+                        <div class="project-title"><a href="https://www.harperhotels.com/en/hotel/view/15/reserva-real-by-harper" target="_blank">Reserva Real by Harper (RD) – 2025</a></div>
+                        <div class="project-meta">Sistema SENTEC</div>
+                        <div class="project-description">Asesoría remota en apertura, coordinación de equipos y capacitación.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title"><a href="https://www.astonhotelsinternational.com/en/hotel/view/118/aston-rubi-city-suites" target="_blank">ASTON Rubi City Suites (RD) – 2025</a></div>
+                        <div class="project-meta">Sistema SENTEC</div>
+                        <div class="project-description">Asesoría técnica en apertura, coordinación de equipos y capacitación.</div>
                     </div>
                 </div>
             </section>
 
-            <!-- EDUCACIÓN -->
             <section class="section">
-                <h2 class="section-title">
-                    <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-                    Educación
-                </h2>
+                <h2 class="section-title">Proyectos en Curso</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">Aston Bocettos City Suites (RD)</div>
+                        <div class="project-meta">Softopening Septiembre 2026</div>
+                        <div class="project-description">Asistencia remota en las tareas que me asignen para la apertura del hotel.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Educación</h2>
                 <div class="education-item">
                     <div class="education-degree">Ingeniero Electricista</div>
-                    <div class="education-school">Universidad Central "Marta Abreu" de Las Villas – Santa Clara, Cuba</div>
-                    <div class="education-date">2002 – 2007</div>
+                    <div class="education-school">Universidad Central "Marta Abreu" de Las Villas</div>
+                    <div class="education-date">2002 – 2007 | Santa Clara, Cuba</div>
                     <div class="education-details">
                         <ul>
-                            <li>Asistente académico en los departamentos de Telemática, Automática e Ingeniería Eléctrica.</li>
-                            <li>Formación complementaria en administración de redes y sistemas de cómputo en la Facultad de Cibernética.</li>
-                            <li>Clases prácticas interfacultativas en la Facultad de Mecánica: diseño, control y dibujo técnico con AutoCAD.</li>
-                            <li>Curso de preparación pedagógica (1 año): acreditación como Instructor General Integral.</li>
-                            <li>Inglés técnico universitario (3 años): competencia laboral en el idioma.</li>
+                            <li>Asistente académico en Telemática, Automática e Ingeniería Eléctrica.</li>
+                            <li>Formación en redes y sistemas en la Facultad de Cibernética.</li>
+                            <li>Curso de pedagogía (1 año).</li>
+                            <li>Inglés técnico (3 años).</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- HABILIDADES TÉCNICAS -->
             <section class="section">
-                <h2 class="section-title">
-                    <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
-                    Habilidades Técnicas
-                </h2>
+                <h2 class="section-title">Habilidades</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h4>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            IA Aplicada a Sistemas
-                        </h4>
-                        <p>Uso estratégico de IA para automatizar tareas técnicas, sintetizar documentos y optimizar procesos operativos. Integración de modelos de lenguaje en flujos de trabajo con validación técnica.</p>
+                        <h4>Inteligencia Artificial como Asistente</h4>
+                        <p>Diseño y uso de prompts para automatización de tareas administrativas y técnicas. Iteración de textos y mensajes para impacto en plataformas con restricciones. Aplicación de protocolos de IA (MCP, DeepSeek, Groq, Opencode) para modularización y escalado de aplicaciones. Automatización de procesos con scripts y asistentes virtuales.</p>
                     </div>
-
                     <div class="skill-category">
-                        <h4>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            Gestión y Estrategia
-                        </h4>
-                        <p>Gestión de TI en entornos corporativos y hoteleros, planificación estratégica de infraestructura, coordinación de proyectos técnico-operativos y liderazgo de equipos multidisciplinarios.</p>
+                        <h4>Gestión de Código</h4>
+                        <p>Desarrollo de herramientas de monitoreo en Python y SQL. Manejo de scripts para automatización de redes y sistemas. Control de versiones y documentación técnica.</p>
                     </div>
-
                     <div class="skill-category">
-                        <h4>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            Redes y Sistemas
-                        </h4>
-                        <p>Administración de redes LAN/WLAN con VLANs, arquitecturas GPON (OLT/ONT), switching tradicional. Gestión de servidores físicos y virtuales, Windows Server, Linux, Active Directory, DNS, DHCP.</p>
+                        <h4>Gestión de TI</h4>
+                        <p>Supervisión de infraestructura informática en hoteles y oficinas corporativas. Administración de Active Directory, GPO y servidores virtualizados (VMware, Hyper-V, Proxmox). Coordinación de helpdesk corporativo y soporte remoto a usuarios. Implementación de soluciones telemáticas: telefonía IP, TV interna, cerraduras magnéticas.</p>
                     </div>
-
                     <div class="skill-category">
-                        <h4>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            Infraestructura y Seguridad
-                        </h4>
-                        <p>Supervisión de cuartos eléctricos y centros de datos, sistemas de protección eléctrica, CCTV, control de acceso, UPS, seguridad informática, respaldo de datos y monitoreo de red.</p>
+                        <h4>Redes Básicas</h4>
+                        <p>Configuración y mantenimiento de redes LAN/WAN. Manejo de equipos Cisco, Huawei, D-Link y Mikrotik. Diseño de infraestructura WiFi y AP para hoteles y oficinas.</p>
                     </div>
-
                     <div class="skill-category">
-                        <h4>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            Sistemas de Hospitalidad
-                        </h4>
-                        <p>IPTV, telefonía IP, audio sobre IP, música ambiental, cerraduras electrónicas TESA Inhova, cajas fuertes, sistemas de acceso, integración de plataformas PMS y redes internas.</p>
+                        <h4>Infraestructura Eléctrica</h4>
+                        <p>Conocimientos en sistemas eléctricos aplicados a instalaciones hoteleras. Supervisión de mantenimiento eléctrico en propiedades. Integración de infraestructura eléctrica con sistemas informáticos y telemáticos.</p>
                     </div>
-
                     <div class="skill-category">
-                        <h4>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                            Software y Desarrollo
-                        </h4>
-                        <p>Microsoft 365, Google Workspace, Oracle, SQL, AutoCAD, AutoLISP, Python, Bash, PowerShell, Ansible, Google Apps Script, Power Query, Docker, Git, TeamViewer, AnyDesk.</p>
+                        <h4>Sistemas de Hotel</h4>
+                        <p>Manejo de PMS (Property Management Systems) y aplicaciones hoteleras. Integración de sistemas de reservas, facturación y control de operaciones. Soporte a usuarios en sistemas corporativos de gestión hotelera.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Software que manejo</h4>
+                        <p>Google Workspace (Docs, Sheets, Drive, Meet, Gmail, Calendar). Microsoft Office 365 (Word, Excel, PowerPoint, Outlook). SQL Server para gestión de bases de datos. Zimbra para correo corporativo. Herramientas de virtualización: VMware, Hyper-V, Proxmox. AutoCAD para scripting. Plataformas de colaboración y gestión de proyectos.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- IDIOMAS -->
             <section class="section">
-                <h2 class="section-title">
-                    <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53-1.7.96-3.67 1.5-5.76 1.5-1.54 0-3.03-.26-4.42-.74-.25.9-.44 1.84-.56 2.81C5.41 9.97 8.03 10.5 10.7 10.5c.58 0 1.15-.04 1.71-.12L9.9 12.89c-.56.56-.56 1.47 0 2.03l3.01 3.01c.28.28.65.42 1.02.42.37 0 .74-.14 1.02-.42.55-.56.55-1.47-.08-2.07zM18.36 17.12c-.79.88-1.73 1.61-2.77 2.15.24.75.42 1.53.53 2.33 1.37-.66 2.6-1.6 3.59-2.77-.46-.59-.92-1.16-1.35-1.71zM20.65 14.5c-.63.98-1.38 1.88-2.24 2.67.44.56.89 1.14 1.33 1.73 1.16-1.07 2.13-2.34 2.87-3.76-.65-.23-1.31-.44-1.96-.64z"/></svg>
-                    Idiomas
-                </h2>
+                <h2 class="section-title">Idiomas</h2>
                 <div class="languages-container">
                     <div class="language-item">
                         <div class="language-name">Español</div>
@@ -936,84 +727,56 @@
                     </div>
                     <div class="language-item">
                         <div class="language-name">Inglés</div>
-                        <div class="language-level">Competencia laboral (técnico y operativo) – 3 años de formación universitaria en inglés técnico</div>
+                        <div class="language-level">Técnico y operativo – 3 años de formación</div>
                     </div>
                 </div>
             </section>
 
-            <!-- REFERENCIAS LABORALES -->
             <section class="section">
-                <h2 class="section-title">
-                    <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                    Referencias Laborales
-                </h2>
+                <h2 class="section-title">Referencias</h2>
                 <div class="references-grid">
                     <div class="reference-card">
                         <div class="reference-name">Nikolas E. R. Katuuk</div>
-                        <div class="reference-position">Director of Business Development – SentinelTech / Archipelago International (Indonesia)</div>
-                        <div class="reference-contact">
-                            <a href="mailto:nikolas.k@archipelagohotels.com">nikolas.k@archipelagohotels.com</a> | +62 818 214611
-                        </div>
+                        <div class="reference-position">Director of Business Development – Archipelago International (Indonesia)</div>
+                        <div class="reference-contact">nikolas.k@archipelagohotels.com | +62 818 214611</div>
                     </div>
-
                     <div class="reference-card">
                         <div class="reference-name">Heriberto Ramos Hernández</div>
-                        <div class="reference-position">Condotel Manager – Reserva Real by Harper (Punta Cana, RD)</div>
-                        <div class="reference-contact">
-                            <a href="mailto:reservarealcm@harperhotels.com">reservarealcm@harperhotels.com</a> | +1 (829) 539-5555
-                        </div>
+                        <div class="reference-position">Condotel Manager – Reserva Real by Harper (RD)</div>
+                        <div class="reference-contact">reservarealcm@harperhotels.com | +1 (829) 539-5555</div>
                     </div>
-
                     <div class="reference-card">
                         <div class="reference-name">Argenis Guzman Castillo</div>
                         <div class="reference-position">Condotel Manager – ASTON Rubi City Suites (RD)</div>
-                        <div class="reference-contact">
-                            <a href="mailto:rubicitysuitescm@astonhotelsinternational.com">rubicitysuitescm@astonhotelsinternational.com</a> | +1 (829) 774-0432
-                        </div>
+                        <div class="reference-contact">rubicitysuitescm@astonhotelsinternational.com | +1 (829) 774-0432</div>
                     </div>
-
                     <div class="reference-card">
                         <div class="reference-name">Oscar Cartaya</div>
                         <div class="reference-position">Director Nacional de Informática – Grupo Gaviota (Cuba)</div>
-                        <div class="reference-contact">
-                            <a href="mailto:director.informatica@gaviota.cu">director.informatica@gaviota.cu</a> | +53 5 2803112
-                        </div>
+                        <div class="reference-contact">director.informatica@gaviota.cu | +53 5 2803112</div>
                     </div>
-
                     <div class="reference-card">
                         <div class="reference-name">Félix Mercedes Alcalá</div>
                         <div class="reference-position">General Manager – GRAND ASTON Cayo Paredón (Cuba)</div>
-                        <div class="reference-contact">
-                            <a href="mailto:fmercedes74@gmail.com">fmercedes74@gmail.com</a> | +1 (809) 821-6005
-                        </div>
+                        <div class="reference-contact">fmercedes74@gmail.com | +1 (809) 821-6005</div>
                     </div>
-
                     <div class="reference-card">
-                        <div class="reference-name">Juan Carlos Cores Fresco ✅ Actualizado</div>
+                        <div class="reference-name">Juan Carlos Cores Fresco</div>
                         <div class="reference-position">General Manager – GRAND ASTON La Habana (Cuba)</div>
-                        <div class="reference-contact">
-                            <a href="mailto:cfresco22@gmail.com">cfresco22@gmail.com</a> | +1 (829) 345-5625
-                        </div>
+                        <div class="reference-contact">cfresco22@gmail.com | +1 (829) 345-5625</div>
                     </div>
-
                     <div class="reference-card">
                         <div class="reference-name">Luis Morillo De Los Santos</div>
                         <div class="reference-position">Director General – Hotel Grand Aston Cayo Las Brujas (Cuba)</div>
-                        <div class="reference-contact">
-                            <a href="mailto:joalmos8@hotmail.com">joalmos8@hotmail.com</a> | +1 (809) 915-3413
-                        </div>
+                        <div class="reference-contact">joalmos8@hotmail.com | +1 (809) 915-3413</div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- ============================================
-             PIE DE PÁGINA
-             ============================================ -->
         <footer class="footer">
-            <p><strong>Arian Morales Guedes</strong> – Informático Corporativo | Ingeniero Electricista</p>
-            <p>Disponible para oportunidades remotas e internacionales | +53 5 2593370 | arianmorales@gmail.com</p>
-            <p style="margin-top: 10px; opacity: 0.7;">© 2026 – Documento profesional confidencial</p>
+            <p><strong>Arian Morales Guedes</strong> – Ingeniero Electricista + Informático Hotelero</p>
+            <p>+53 5 2593370 | arianmorales@gmail.com</p>
         </footer>
     </div>
 </body>
