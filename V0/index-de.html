@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Europass-Lebenslauf – Arian Morales Guedes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #003399;
+            --accent: #e30613;
+            --bg: #ffffff;
+            --bg-light: #f5f5f5;
+            --text: #333333;
+            --text-light: #666666;
+            --border: #dcdcdc;
+            --muted: #888888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg-light);
+            padding: 20px 15px;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg);
+            border: 1px solid var(--border);
+        }
+
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 25px 30px;
+        }
+
+        .header-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .photo-container {
+            width: 85px;
+            height: 100px;
+            background: var(--bg);
+            border: 2px solid white;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .header-text h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .header-text .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px 20px;
+            font-size: 0.75rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 6px;
+        }
+
+        .contact-item span:first-child {
+            font-weight: 600;
+            min-width: 60px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 18px 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid var(--accent);
+        }
+
+        .experience-item:last-child,
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 4px;
+        }
+
+        .exp-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .exp-date {
+            font-size: 0.7rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .exp-company {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .exp-location {
+            font-size: 0.7rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .exp-description {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .exp-description ul {
+            margin-top: 4px;
+            padding-left: 12px;
+        }
+
+        .exp-description li {
+            margin-bottom: 2px;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 20px;
+        }
+
+        .skill-item {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .skill-item strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.75rem;
+        }
+
+        .language-item:last-child {
+            border-bottom: none;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .language-level {
+            color: var(--text-light);
+        }
+
+        .reference-item {
+            background: var(--bg-light);
+            padding: 10px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .reference-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .reference-name {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .reference-position {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .reference-contact {
+            font-size: 0.65rem;
+            color: var(--text-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            padding: 10px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .project-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .project-meta {
+            font-size: 0.65rem;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .project-description {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .reference-item {
+            background: var(--bg-light);
+            padding: 10px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--primary);
+        }
+
+        .reference-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .reference-position {
+            font-size: 0.65rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .reference-contact {
+            font-size: 0.6rem;
+            color: var(--text-light);
+        }
+
+        .footer {
+            background: var(--bg-light);
+            padding: 12px 25px;
+            font-size: 0.65rem;
+            color: var(--muted);
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 700px) {
+            .header-content {
+                flex-direction: column;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .references-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .cv-container {
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-content">
+                <div class="photo-container">
+                    <img src="yo2026.jpg" alt="Arian Morales Guedes" />
+                </div>
+                <div class="header-text">
+                    <h1>Arian Morales Guedes</h1>
+                    <div class="label">Elektroingenieur + Hotel-IT-Spezialist</div>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <span>Adresse:</span>
+                            <span>Havanna, Kuba</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>Telefon:</span>
+                            <a href="tel:+5352593370">+53 5 2593370</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>E-Mail:</span>
+                            <a href="mailto:arianmorales@gmail.com">arianmorales@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/arianmoralesguedes/" target="_blank">linkedin.com/in/arianmoralesguedes</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>Online-Lebenslauf:</span>
+                            <a href="https://arianmorales.github.io/cv/" target="_blank">arianmorales.github.io/cv</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>Nationalität:</span>
+                            <span>kubanisch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Berufserfahrung -->
+            <section class="section">
+                <h2 class="section-title">Berufserfahrung</h2>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Corporate IT-Spezialist</div>
+                        <div class="exp-date">05/2023 – heute</div>
+                    </div>
+                    <div class="exp-company">Archipelago International – Kuba</div>
+                    <div class="exp-location">Havanna, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Überwachung und Beratung der IT-Infrastruktur in sechs Hotels der Kette.</li>
+                            <li>Fernunterstützung für Häuser in der Dominikanischen Republik.</li>
+                            <li>Fernberatung und Schulung bei Hoteleröffnungen (WiFi, AP, IP-TV, Google Workspace).</li>
+                            <li>Steuerung technologischer Verbesserungen: Netzwerke, Hotelanwendungen, Telematik.</li>
+                            <li>Entwicklung von Überwachungstools mit Python und SQL.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Corporate Administrative Assistant</div>
+                        <div class="exp-date">11/2022 – 05/2023</div>
+                    </div>
+                    <div class="exp-company">Archipelago International – Kuba</div>
+                    <div class="exp-location">Havanna, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Direkte Unterstützung des Betriebsdirektors.</li>
+                            <li>Terminplanung, Meeting- und Kommunikationsorganisation.</li>
+                            <li>Einstellung ausländischer Mitarbeiter: Einwanderungs-, Arbeits- und Visumsverfahren.</li>
+                            <li>Genehmigungsmanagement mit kubanischen Institutionen.</li>
+                            <li>HR-Funktionen: Personalbeschaffung, Onboarding und Mitarbeiterbetreuung.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Hotel-IT-Spezialist</div>
+                        <div class="exp-date">06/2022 – 11/2022</div>
+                    </div>
+                    <div class="exp-company">Grand Aston La Habana</div>
+                    <div class="exp-location">Havanna, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Mitwirkung bei der Eröffnung des technologisch fortschrittlichsten Hotels Kubas.</li>
+                            <li>Verwaltung von 600 Zimmern mit Switch, WiFi-AP, IP-Telefonen und Smart-IP-TV.</li>
+                            <li>Netzwerkverwaltung mit Layer-3-Core-Switch.</li>
+                            <li>Virtualisierte Server mit VMware.</li>
+                            <li>Entwicklung von Überwachungssystemen mit Python und SQL.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Hotel-IT-Spezialist</div>
+                        <div class="exp-date">03/2018 – 05/2022</div>
+                    </div>
+                    <div class="exp-company">Grand Aston Cayo Las Brujas</div>
+                    <div class="exp-location">Villa Clara, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Administration von 4 virtualisierten HP ProLiant-Servern (Hyper-V, VMware).</li>
+                            <li>Windows-Domain-Verwaltung, Active Directory und GPO-Richtlinien.</li>
+                            <li>SQL-Server- und PMS-Administration.</li>
+                            <li>Implementierung des Zimbra-Mailservers.</li>
+                            <li>Support für TV-, Telefonie- und Datennetzsysteme.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">IT-Spezialist</div>
+                        <div class="exp-date">01/2016 – 02/2018</div>
+                    </div>
+                    <div class="exp-company">Housing Investment Unit</div>
+                    <div class="exp-location">Ciego de Ávila, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Administration von drei Servern und einem Netzwerk mit 10 Thin Clients.</li>
+                            <li>Oracle-Datenbankverwaltung.</li>
+                            <li>Windows mit Active Directory.</li>
+                            <li>Benutzer-, Berechtigungs- und Sicherheitsrichtlinienverwaltung.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Selbstständig – Reparaturtechniker für Geräte</div>
+                        <div class="exp-date">03/2015 – 12/2015</div>
+                    </div>
+                    <div class="exp-company">Private Werkstatt</div>
+                    <div class="exp-location">Ciego de Ávila, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Reparatur von elektrischen und elektronischen Geräten.</li>
+                            <li>Führung einer privaten Reparaturwerkstatt.</li>
+                            <li>Direkter Kundenservice und Service-Management.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Supervisor für Notstromaggregate</div>
+                        <div class="exp-date">12/2010 – 02/2015</div>
+                    </div>
+                    <div class="exp-company">Cuba Electric Company</div>
+                    <div class="exp-location">Ciego de Ávila, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Koordination und Überwachung von Stromaggregaten in kritischen Einrichtungen.</li>
+                            <li>Vorbeugende und korrektive Wartungskontrolle.</li>
+                            <li>Überwachung elektrischer Parameter und Störungsmanagement.</li>
+                            <li>Organisation des technischen Teams.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Elektrofachkraft</div>
+                        <div class="exp-date">10/2007 – 11/2010</div>
+                    </div>
+                    <div class="exp-company">Cuba Electric Company</div>
+                    <div class="exp-location">Ciego de Ávila, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Erstellung von elektrischen Zeichnungen in AutoCAD für Hochspannungsleitungen und Umspannwerke.</li>
+                            <li>Entwurf von Elektroprojekten und technische Dokumentation.</li>
+                            <li>Überprüfung von Zeichnungen gemäß nationalen und internationalen Normen.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ausbildung -->
+            <section class="section">
+                <h2 class="section-title">Ausbildung und Weiterbildung</h2>
+
+                <div class="education-item">
+                    <div class="exp-header">
+                        <div class="exp-title">Elektroingenieur</div>
+                        <div class="exp-date">2002 – 2007</div>
+                    </div>
+                    <div class="exp-company">Zentraluniversität "Marta Abreu" von Las Villas</div>
+                    <div class="exp-location">Santa Clara, Kuba</div>
+                    <div class="exp-description">
+                        <ul>
+                            <li>Akademischer Assistent in Telematik, Automatisierung und Elektrotechnik.</li>
+                            <li>Ausbildung in Netzwerken und Systemen an der Fakultät für Kybernetik.</li>
+                            <li>Pädagogikkurs (1 Jahr).</li>
+                            <li>Technisches Englisch (3 Jahre).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fähigkeiten -->
+            <section class="section">
+                <h2 class="section-title">Fähigkeiten und Kompetenzen</h2>
+                <div class="two-columns">
+                    <div>
+                        <h3 class="section-title" style="border-bottom: 1px solid var(--border); margin-bottom: 10px;">Technische Fähigkeiten</h3>
+                        <div class="skills-list">
+                            <div class="skill-item"><strong>IT-Management:</strong> VMware, Hyper-V, Proxmox, Active Directory, GPO, Helpdesk</div>
+                            <div class="skill-item"><strong>Hotelsysteme:</strong> PMS, IP-TV, IP-Telefonie, Magnet-Schlösser</div>
+                            <div class="skill-item"><strong>Datenbanken:</strong> SQL Server, Oracle</div>
+                            <div class="skill-item"><strong>Programmierung:</strong> Python, SQL, Automatisierungsskripte</div>
+                            <div class="skill-item"><strong>Software:</strong> Google Workspace, Microsoft 365, Zimbra, AutoCAD</div>
+                            <div class="skill-item"><strong>Elektrik & Installationen:</strong> Hausinstallationen, Schaltpläne, kubanische Normen</div>
+                            <div class="skill-item"><strong>Elektronik & Reparatur:</strong> PC, Laptop, Handy, elektronische Geräte und Server-Reparatur</div>
+                            <div class="skill-item"><strong>Verwaltung:</strong> Terminplanung, Korrespondenz, Einwanderungsverfahren, HR</div>
+                            <div class="skill-item"><strong>Netzwerke & Telematik:</strong> Switch-Programmierung, VLANs, AP-Administration, strukturierte Verkabelung, Glasfaser, Cisco, Huawei, D-Link, Mikrotik, GPON, WiFi</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="section-title" style="border-bottom: 1px solid var(--border); margin-bottom: 10px;">Künstliche Intelligenz</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">Prompt-Design und -Einsatz für Automatisierung</div>
+                            <div class="skill-item">KI-Protokolle: MCP, DeepSeek, Groq, Opencode</div>
+                            <div class="skill-item">Prozessautomatisierung mit Skripten</div>
+                            <div class="skill-item">Entwicklung von Überwachungstools</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sprachen -->
+            <section class="section">
+                <h2 class="section-title">Sprachen</h2>
+                <div class="language-item">
+                    <div class="language-name">Spanisch</div>
+                    <div class="language-level">Muttersprache</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Englisch</div>
+                    <div class="language-level">Verhandlungssicher – technisch und operativ</div>
+                </div>
+            </section>
+
+            <!-- Ausgewählte Projekte -->
+            <section class="section">
+                <h2 class="section-title">Ausgewählte Projekte</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">Grand Aston La Habana – 2022</div>
+                        <div class="project-meta">600 Zimmer | +1.000 Geräte</div>
+                        <div class="project-description">Eröffnung: Server, USV, WiFi, AP, IP-TV, CCTV, IP-Telefonie, Schlösser.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Grand Aston Cayo Paredón – 2022</div>
+                        <div class="project-meta">635 Zimmer | +1.100 Geräte</div>
+                        <div class="project-description">Technische Beratung für Hotelsysteme.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Corporate Office Havanna – 2023</div>
+                        <div class="project-meta">Regionalzentrale</div>
+                        <div class="project-description">Teil des Gründungsteams. Systemsupport.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Grand Aston Varadero – 2023</div>
+                        <div class="project-meta">531 Zimmer</div>
+                        <div class="project-description">Schulung des lokalen Teams.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Punta Cana Office (DR) – 2024</div>
+                        <div class="project-meta">Fernsupport</div>
+                        <div class="project-description">Fernunterstützung für Netzwerke, IP-TV und Konferenzraum.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">Reserva Real by Harper (DR) – 2025</div>
+                        <div class="project-meta">SENTEC-System</div>
+                        <div class="project-description">Fernberatung zur Eröffnung.</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-title">ASTON Rubi City Suites (DR) – 2025</div>
+                        <div class="project-meta">SENTEC-System</div>
+                        <div class="project-description">Technische Eröffnungsberatung.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Laufende Projekte -->
+            <section class="section">
+                <h2 class="section-title">Laufende Projekte</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-title">Aston Bocettos City Suites (DR)</div>
+                        <div class="project-meta">Soft Opening September 2026</div>
+                        <div class="project-description">Fernunterstützung für Eröffnungsaufgaben.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Referenzen -->
+            <section class="section">
+                <h2 class="section-title">Referenzen</h2>
+                <div class="references-grid">
+                    <div class="reference-item">
+                        <div class="reference-name">Nikolas E. R. Katuuk</div>
+                        <div class="reference-position">Director of Business Development – Archipelago International (Indonesien)</div>
+                        <div class="reference-contact">nikolas.k@archipelagohotels.com | +62 818 214611</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-name">Heriberto Ramos Hernández</div>
+                        <div class="reference-position">Condotel Manager – Reserva Real by Harper (DR)</div>
+                        <div class="reference-contact">reservarealcm@harperhotels.com | +1 (829) 539-5555</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-name">Argenis Guzman Castillo</div>
+                        <div class="reference-position">Condotel Manager – ASTON Rubi City Suites (DR)</div>
+                        <div class="reference-contact">rubicitysuitescm@astonhotelsinternational.com | +1 (829) 774-0432</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-name">Oscar Cartaya</div>
+                        <div class="reference-position">Nationaler IT-Direktor – Grupo Gaviota (Kuba)</div>
+                        <div class="reference-contact">director.informatica@gaviota.cu | +53 5 2803112</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-name">Félix Mercedes Alcalá</div>
+                        <div class="reference-position">General Manager – GRAND ASTON Cayo Paredón (Kuba)</div>
+                        <div class="reference-contact">fmercedes74@gmail.com | +1 (809) 821-6005</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-name">Juan Carlos Cores Fresco</div>
+                        <div class="reference-position">General Manager – GRAND ASTON La Habana (Kuba)</div>
+                        <div class="reference-contact">cfresco22@gmail.com | +1 (829) 345-5625</div>
+                    </div>
+                    <div class="reference-item">
+                        <div class="reference-name">Luis Morillo De Los Santos</div>
+                        <div class="reference-position">General Manager – Grand Aston Cayo Las Brujas (Kuba)</div>
+                        <div class="reference-contact">joalmos8@hotmail.com | +1 (809) 915-3413</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            Arian Morales Guedes | 2026
+        </footer>
+    </div>
+</body>
+</html>
