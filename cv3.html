@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi CV</title>
+    <title>CV - Arian Morales Guedes</title>
     <style>
-        /* ─── RESET & GLOBALES ─── */
+        /* ─── RESET ─── */
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-            background: #eaeaea;
+            background: #e8e8e8;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,27 +22,27 @@
             padding: 2rem 1rem;
         }
 
-        /* ─── TARJETA PRINCIPAL ─── */
+        /* ─── TARJETA ─── */
         .cv-container {
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
             background: #ffffff;
             border-radius: 20px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 300px 1fr;
             overflow: hidden;
-            transition: all 0.2s;
         }
 
-        /* ─── COLUMNA IZQUIERDA (oscura) ─── */
+        /* ─── COLUMNA IZQUIERDA (fondo claro) ─── */
         .sidebar {
-            background: #2c2c2c;
-            color: #f0f0f0;
+            background: #f4f4f4;
+            color: #1e1e1e;
             padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 1.8rem;
+            gap: 1.6rem;
+            border-right: 1px solid #d0d0d0;
         }
 
         /* ─── FOTO ─── */
@@ -56,34 +56,35 @@
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #aaaaaa;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             background: #fff;
         }
 
         /* ─── TEXTO EN SIDEBAR ─── */
         .sidebar h2 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            letter-spacing: 1px;
-            color: #d0d0d0;
-            border-bottom: 2px solid #555;
+            letter-spacing: 0.5px;
+            color: #1a1a1a;
+            border-bottom: 2px solid #c0c0c0;
             padding-bottom: 0.4rem;
             margin-bottom: 0.8rem;
         }
 
         .sidebar .item {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
             line-height: 1.5;
+            font-size: 0.95rem;
         }
 
         .sidebar .item strong {
-            color: #ffffff;
-            font-weight: 500;
+            color: #000000;
+            font-weight: 600;
         }
 
         .sidebar .item span {
-            color: #c0c0c0;
-            font-weight: 300;
+            color: #2b2b2b;
+            font-weight: 400;
         }
 
         .sidebar ul {
@@ -93,8 +94,9 @@
 
         .sidebar ul li {
             padding: 0.25rem 0;
-            border-bottom: 1px solid #3d3d3d;
-            color: #d4d4d4;
+            border-bottom: 1px solid #d8d8d8;
+            color: #1e1e1e;
+            font-size: 0.93rem;
         }
 
         .sidebar ul li:last-child {
@@ -104,52 +106,58 @@
         .habilidad-item {
             display: flex;
             justify-content: space-between;
-            font-size: 0.95rem;
-            padding: 0.3rem 0;
-            border-bottom: 1px solid #3d3d3d;
+            font-size: 0.92rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #d8d8d8;
         }
 
         .habilidad-item .nombre {
-            color: #f0f0f0;
+            color: #1a1a1a;
         }
 
         .habilidad-item .nivel {
-            color: #b0b0b0;
-            font-size: 0.85rem;
+            color: #555;
+            font-size: 0.8rem;
         }
 
-        /* ─── COLUMNA DERECHA (clara) ─── */
+        /* ─── COLUMNA DERECHA ─── */
         .main {
-            background: #fcfcfc;
+            background: #ffffff;
             padding: 2rem 2.2rem;
-            color: #1e1e1e;
+            color: #1a1a1a;
         }
 
         .main h1 {
-            font-size: 2.4rem;
-            font-weight: 600;
+            font-size: 2.2rem;
+            font-weight: 700;
             letter-spacing: -0.5px;
-            color: #1a1a1a;
-            margin-bottom: 0.25rem;
+            color: #0a0a0a;
+            margin-bottom: 0.1rem;
+        }
+
+        .main .subtitulo {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #444;
+            margin-bottom: 0.3rem;
         }
 
         .main .titulo-profesion {
             font-size: 1.1rem;
-            font-weight: 400;
-            color: #555;
-            margin-bottom: 1.2rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 1rem;
             border-bottom: 2px solid #d0d0d0;
-            padding-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
         }
 
         .main h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #222;
-            margin-top: 1.6rem;
-            margin-bottom: 0.6rem;
-            letter-spacing: 0.3px;
-            border-left: 5px solid #2c2c2c;
+            color: #111;
+            margin-top: 1.4rem;
+            margin-bottom: 0.5rem;
+            border-left: 5px solid #555;
             padding-left: 0.8rem;
         }
 
@@ -159,46 +167,76 @@
 
         .main .fecha {
             font-weight: 300;
-            color: #777;
-            font-size: 0.9rem;
+            color: #666;
+            font-size: 0.85rem;
         }
 
         .main .empresa {
             font-weight: 600;
-            color: #1a1a1a;
+            color: #0a0a0a;
         }
 
         .main .cargo {
             font-weight: 500;
-            color: #333;
+            color: #222;
         }
 
         .main .descripcion {
             margin-top: 0.2rem;
-            padding-left: 1rem;
+            padding-left: 1.2rem;
             list-style-type: disc;
-            color: #2b2b2b;
+            color: #222;
+            font-size: 0.92rem;
+            line-height: 1.5;
         }
 
         .main .descripcion li {
-            margin-bottom: 0.25rem;
-            line-height: 1.5;
+            margin-bottom: 0.2rem;
         }
 
         .main .referencias {
             font-style: italic;
             color: #444;
-            margin-top: 0.3rem;
+            margin-top: 0.2rem;
+        }
+
+        .main .contacto-linea {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+
+        .main .contacto-linea span {
+            background: #f0f0f0;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .badge {
+            background: #eaeaea;
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #333;
+            border: 1px solid #ccc;
+            display: inline-block;
+            margin: 0.1rem 0.2rem;
         }
 
         /* ─── RESPONSIVE ─── */
-        @media (max-width: 720px) {
+        @media (max-width: 760px) {
             .cv-container {
                 grid-template-columns: 1fr;
                 border-radius: 16px;
             }
 
             .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #d0d0d0;
                 text-align: center;
                 padding: 1.8rem 1.2rem;
             }
@@ -213,7 +251,7 @@
             }
 
             .main h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -222,7 +260,7 @@
 
 <div class="cv-container">
 
-    <!-- ========== COLUMNA IZQUIERDA ========== -->
+    <!-- ========== COLUMNA IZQUIERDA (CLARA) ========== -->
     <aside class="sidebar">
 
         <!-- FOTO -->
@@ -233,31 +271,28 @@
         <!-- CONTACTO -->
         <div>
             <h2>📌 CONTACTO</h2>
-            <div class="item"><strong>📞</strong> <span>+34 612 345 678</span></div>
-            <div class="item"><strong>✉️</strong> <span>ana.lopez@email.com</span></div>
-            <div class="item"><strong>📍</strong> <span>Madrid, España</span></div>
-            <div class="item"><strong>🔗</strong> <span>linkedin.com/in/ana-lopez</span></div>
+            <div class="item"><strong>📞</strong> <span>+53 52593370</span></div>
+            <div class="item"><strong>📱</strong> <span>WhatsApp: +53 52593370</span></div>
+            <div class="item"><strong>✉️</strong> <span>arianmorales@gmail.com</span></div>
+            <div class="item"><strong>✉️</strong> <span>arian.g@archipelagohotels.com</span></div>
+            <div class="item"><strong>📍</strong> <span>La Habana, Cuba</span></div>
+            <div class="item"><strong>🔗</strong> <span>linkedin.com/in/amorales2</span></div>
+            <div class="item"><strong>🌐</strong> <span>facebook.com/arian.morales.guedes.1982</span></div>
         </div>
 
-        <!-- HABILIDADES TÉCNICAS -->
+        <!-- COMPETENCIAS CLAVE (resumidas) -->
         <div>
-            <h2>⚙️ HARD SKILLS</h2>
-            <div class="habilidad-item">
-                <span class="nombre">Gestión de proyectos</span>
-                <span class="nivel">●●●●○</span>
-            </div>
-            <div class="habilidad-item">
-                <span class="nombre">Python / SQL</span>
-                <span class="nivel">●●●○○</span>
-            </div>
-            <div class="habilidad-item">
-                <span class="nombre">Power BI / Tableau</span>
-                <span class="nivel">●●●●○</span>
-            </div>
-            <div class="habilidad-item">
-                <span class="nombre">Adobe Suite</span>
-                <span class="nivel">●●●○○</span>
-            </div>
+            <h2>⚙️ COMPETENCIAS CLAVE</h2>
+            <ul>
+                <li><strong>Infraestructura TI Hotelera</strong> — LAN/WLAN, GPON, Wi-Fi alta densidad</li>
+                <li><strong>Telefonía IP</strong> — Asterisk, 3CX, Avaya</li>
+                <li><strong>Virtualización</strong> — VMware, Hyper-V, Proxmox</li>
+                <li><strong>Sistemas PMS</strong> — Opera, Visual, HotelManager, SENTEC</li>
+                <li><strong>Ingeniería Eléctrica</strong> — BT/MT, centros de transformación, RC</li>
+                <li><strong>Automatización</strong> — HVAC, KNX, SCADA, PLC</li>
+                <li><strong>Seguridad</strong> — CCTV, control de accesos, incendios</li>
+                <li><strong>Gestión de proyectos</strong> — PMI, MS Project, Jira</li>
+            </ul>
         </div>
 
         <!-- IDIOMAS -->
@@ -265,20 +300,31 @@
             <h2>🌐 IDIOMAS</h2>
             <ul>
                 <li><strong>Español</strong> — Nativo</li>
-                <li><strong>Inglés</strong> — C1 (Advanced)</li>
-                <li><strong>Francés</strong> — B1 (Intermedio)</li>
+                <li><strong>Inglés</strong> — Competencia laboral (técnico/operativo) — respaldada por 3 años de formación universitaria en inglés técnico</li>
             </ul>
         </div>
 
-        <!-- SOFT SKILLS -->
+        <!-- CERTIFICACIONES Y HABILITACIONES -->
         <div>
-            <h2>🧠 SOFT SKILLS</h2>
+            <h2>📜 Certificaciones y habilitaciones</h2>
             <ul>
-                <li>Comunicación asertiva</li>
-                <li>Trabajo en equipo</li>
-                <li>Pensamiento crítico</li>
-                <li>Adaptabilidad</li>
-                <li>Liderazgo</li>
+                <li>Certified Wireless Network Administrator (CWNA) — en progreso</li>
+                <li>VMware Certified Professional (VCP) — 2022</li>
+                <li>Microsoft Certified: Windows Server Hybrid Administrator — 2022</li>
+                <li>Project Management Professional (PMP) — PMI, 2019</li>
+                <li>Instalador Electricista Autorizado — Ministerio de Energía y Minas, Cuba</li>
+                <li>Certificación en Eficiencia Energética — CUBASOLAR, 2018</li>
+                <li>Seguridad en Instalaciones Eléctricas — IEC 60364, 2017</li>
+            </ul>
+        </div>
+
+        <!-- INFORMACIÓN ADICIONAL -->
+        <div>
+            <h2>ℹ️ Información adicional</h2>
+            <ul>
+                <li>Disponibilidad inmediata para incorporación</li>
+                <li>Disponibilidad para viajes nacionales e internacionales</li>
+                <li>Compromiso con la formación continua y la innovación tecnológica</li>
             </ul>
         </div>
 
@@ -288,64 +334,369 @@
     <main class="main">
 
         <!-- NOMBRE + TÍTULO -->
-        <h1>Ana López</h1>
-        <div class="titulo-profesion">Project Manager &amp; Data Analyst</div>
+        <h1>Arian Morales Guedes</h1>
+        <div class="subtitulo">Informático Corporativo | Ingeniero Electricista</div>
+        <div class="titulo-profesion">Especialista en Infraestructura TI Hotelera</div>
 
-        <!-- PERFIL -->
+        <!-- CONTACTO RÁPIDO -->
+        <div class="contacto-linea">
+            <span>Nacionalidad Cubana</span>
+            <span>📅 Disponible inmediato</span>
+            <span>✈️ Viajes nacionales/internacionales</span>
+        </div>
+
+        <!-- PERFIL PROFESIONAL -->
         <h3>📋 Perfil profesional</h3>
-        <p style="line-height:1.6; color:#2b2b2b;">
-            Profesional con <strong>6 años de experiencia</strong> en gestión de proyectos y análisis de datos.
-            Especializada en transformación digital y metodologías ágiles. Apasionada por optimizar
-            procesos y generar valor a partir de los datos.
+        <p style="line-height:1.6; color:#1e1e1e; font-size:0.95rem;">
+            Ingeniero Electricista con más de 15 años de experiencia en entornos técnicos
+            multidisciplinarios, abarcando ingeniería eléctrica, gestión de sistemas informáticos,
+            telemáticos y automatización. Durante más de 8 años he aplicado este conocimiento al
+            sector hotelero y de hospitalidad, con enfoque en operación segura, cumplimiento
+            normativo y continuidad del negocio, minimizando tiempos de interrupción.
+        </p>
+        <p style="line-height:1.6; color:#1e1e1e; font-size:0.95rem; margin-top:0.4rem;">
+            Actualmente me desempeño como <strong>Informático Corporativo en Archipelago International – Cuba</strong>,
+            coordinando la implementación de estándares tecnológicos en los seis hoteles de la cadena
+            en el país. Además, brindo soporte remoto a la oficina regional y a las tres propiedades
+            activas en República Dominicana, así como al equipo operativo en México.
         </p>
 
         <!-- EXPERIENCIA LABORAL -->
-        <h3>💼 Experiencia laboral</h3>
+        <h3>💼 Experiencia profesional</h3>
 
-        <div style="margin-bottom:1.2rem;">
-            <div><span class="empresa">TechSolutions S.L.</span> — <span class="cargo">Project Manager</span></div>
-            <div class="fecha">Ene 2021 – Actualidad · Madrid</div>
+        <!-- Experiencia 1: Informático Corporativo (actual) con todas las funciones del Corporate IT Manager -->
+        <div style="margin-bottom:1rem;">
+            <div><span class="empresa">Archipelago International</span> — <span class="cargo">Informático Corporativo</span></div>
+            <div class="fecha">La Habana, Cuba · 05/2023 – Actualidad</div>
             <ul class="descripcion">
-                <li>Lideré un equipo de 12 personas en la implementación de un CRM, reduciendo tiempos de respuesta en un 35%.</li>
-                <li>Coordiné la migración de datos a la nube, mejorando la disponibilidad y seguridad de la información.</li>
-                <li>Implementé metodologías ágiles (Scrum) aumentando la productividad del equipo en un 20%.</li>
+                <li>Documentacion y seguimiento de la infraestructura TI para las propiedades administradas por Archipelago International en Cuba y Republica Dominicana, asegurando que todos los sistemas de software y hardware funcionen correctamente para respaldar las operaciones hoteleras diarias dandole continuuydad al negocio de conjunto con los especialistas de cada propiedad.</li>
+                <li>Coordinación y capacitación del personal técnico de seis hoteles en Cuba para implementar estándares tecnológicos corporativos.</li>
+                <li>Gestión del equipo de TI en la oficina corporativa y en las seis propiedades en Cuba.</li>
+                <li>Monitoreo y mantenimiento de todos los sistemas de hardware y software, garantizando la continuidad operativa y minimizando tiempos de interrupción.</li>
+                <li>Coordinación y supervisión de contratos de mantenimiento para todos los sistemas tecnológicos del grupo.</li>
+                <li>Capacitación y formación del personal en responsabilidades y uso de sistemas TI, incluyendo la gestión de sistemas críticos como PMS, Micros y Fidelio.</li>
+                <li>Gestión de control de acceso de usuarios y seguridad de la información, implementando protocolos de seguridad en todas las propiedades.</li>
+                <li>Mantenimiento de documentación técnica y sistemas de soporte, asegurando el cumplimiento de regulaciones nacionales e internacionales.</li>
+                <li>Implementación y mantenimiento de estándares corporativos de TI en todas las propiedades del grupo.</li>
+                <li>Supervisión de operaciones diarias de sistemas críticos: PMS (Opera, Visual, HotelManager, SENTEC), Micros, Fidelio e interfaces.</li>
+                <li>Gestión de conectividad a internet, sistemas de correo electrónico y comunicaciones para toda la organización.</li>
+                <li>Diagnóstico y resolución de incidencias de hardware y software, asegurando la estabilidad operativa de los sistemas.</li>
+                <li>Asesoría y diseño de infraestructura TI para nuevos proyectos hoteleros, incluyendo la coordinación de compras y adquisiciones tecnológicas.</li>
+                <li>Monitoreo de contratos TI y procesos de adquisición, optimizando la relación costo-beneficio de las inversiones tecnológicas.</li>
+                <li>Realización de copias de seguridad periódicas y mantenimiento de integridad de datos en todos los sistemas.</li>
+                <li>Responsabilidades técnicas en propiedades sin especialistas: instalaciones eléctricas, centro de datos, sistemas de monitoreo y documentación conforme a normas cubanas.</li>
+                <li>Soporte remoto a la oficina regional en Punta Cana (República Dominicana), a las tres propiedades activas en RD, y al equipo operativo en México.</li>
+                <li>Gestión de integraciones con empresas nacionales: Copextel, GET y ETECSA, asegurando el cumplimiento de normativas cubanas.</li>
+                <li>Contribución a proyectos especiales y actividades hoteleras según lo asignado por la dirección.</li>
             </ul>
         </div>
 
-        <div style="margin-bottom:1.2rem;">
-            <div><span class="empresa">DataVision Corp.</span> — <span class="cargo">Data Analyst</span></div>
-            <div class="fecha">Ago 2018 – Dic 2020 · Barcelona</div>
+        <!-- Experiencia 2: Asistente Administrativo Corporativo -->
+        <div style="margin-bottom:1rem;">
+            <div><span class="empresa">Archipelago International</span> — <span class="cargo">Asistente Administrativo Corporativo</span></div>
+            <div class="fecha">La Habana, Cuba · 11/2022 – 05/2023</div>
             <ul class="descripcion">
-                <li>Diseñé dashboards interactivos con Power BI para el área comercial, facilitando la toma de decisiones.</li>
-                <li>Realicé análisis de ventas que identificaron oportunidades de crecimiento, incrementando ingresos en un 12%.</li>
-                <li>Automaticé reportes semanales con Python, ahorrando 8 horas de trabajo manual cada semana.</li>
+                <li>Facilitación de la comunicación entre oficina central y direcciones generales de los hoteles, bajo supervisión de la Dirección de Operaciones.</li>
+                <li>Asistencia en la contratación de personal nacional y extranjero, gestionando trámites migratorios y administrativos conforme a la normativa vigente.</li>
+                <li>Supervisión de la documentación técnica y legal para la apertura de la oficina corporativa en La Habana.</li>
             </ul>
         </div>
 
-        <!-- EDUCACIÓN -->
-        <h3>🎓 Educación</h3>
-        <div>
-            <div><span class="empresa">Máster en Dirección de Proyectos</span></div>
-            <div class="fecha">Universidad Politécnica · 2020 – 2021</div>
-        </div>
-        <div style="margin-top:0.4rem;">
-            <div><span class="empresa">Ingeniería en Sistemas</span></div>
-            <div class="fecha">Universidad Complutense · 2014 – 2018</div>
+        <!-- Experiencia 3: Informático Grand Aston La Habana -->
+        <div style="margin-bottom:1rem;">
+            <div><span class="empresa">Hotel Grand Aston La Habana</span> — <span class="cargo">Informático</span></div>
+            <div class="fecha">La Habana, Cuba · 06/2022 – 11/2022</div>
+            <ul class="descripcion">
+                <li>Administración de la infraestructura tecnológica del hotel: servidores, redes, conectividad WiFi, plataformas IPTV, telefonía IP y sistemas de audio IP.</li>
+                <li>Supervisión de instalaciones eléctricas en cuartos técnicos y centro de datos, elaborando documentación conforme a regulaciones nacionales.</li>
+                <li>Participación en la apertura del hotel, considerado en su momento uno de los más avanzados tecnológicamente del país, con 600 habitaciones y más de 1,000 dispositivos de red.</li>
+            </ul>
         </div>
 
-        <!-- CERTIFICACIONES -->
-        <h3>📜 Certificaciones</h3>
-        <ul style="padding-left:1.2rem; color:#2b2b2b; line-height:1.6;">
-            <li>Scrum Master (CertiProf, 2022)</li>
-            <li>Google Data Analytics Professional (Coursera, 2021)</li>
-            <li>Power BI Advanced (Microsoft, 2023)</li>
+        <!-- Experiencia 4: Informático Grand Aston Cayo Las Brujas -->
+        <div style="margin-bottom:1rem;">
+            <div><span class="empresa">Hotel Grand Aston Cayo Las Brujas</span> — <span class="cargo">Informático</span></div>
+            <div class="fecha">Villa Clara, Cuba · 03/2018 – 05/2022</div>
+            <ul class="descripcion">
+                <li>Administración de la infraestructura tecnológica del hotel, aplicando protocolos de seguridad y supervisando adecuaciones eléctricas conforme a normas cubanas.</li>
+                <li>Soporte técnico integral, asegurando la estabilidad operativa de los sistemas informáticos.</li>
+            </ul>
+        </div>
+
+        <!-- Experiencia 5: Informático Unidad de Inversiones -->
+        <div style="margin-bottom:1rem;">
+            <div><span class="empresa">Unidad de Inversiones de Vivienda</span> — <span class="cargo">Informático</span></div>
+            <div class="fecha">Ciego de Ávila, Cuba · 01/2016 – 02/2018</div>
+            <ul class="descripcion">
+                <li>Administración de servidores de base datos Oracle y sistemas de clientes ligeros.</li>
+                <li>Implementación de soluciones de red para mejorar la fiabilidad de la infraestructura.</li>
+                <li>Elaboración de documentación técnica conforme a regulaciones estatales y protección de datos institucionales.</li>
+            </ul>
+        </div>
+
+        <!-- Experiencia 6: Supervisor de Generadores -->
+        <div style="margin-bottom:1rem;">
+            <div><span class="empresa">Empresa Eléctrica de Cuba</span> — <span class="cargo">Supervisor de Generadores de Emergencia</span></div>
+            <div class="fecha">Ciego de Ávila, Cuba · 12/2010 – 02/2015</div>
+            <ul class="descripcion">
+                <li>Supervisión de la operación de grupos electrógenos en infraestructuras críticas.</li>
+                <li>Verificación del cumplimiento de normas de seguridad eléctrica y planes de mantenimiento.</li>
+                <li>Garantía de disponibilidad y respuesta ante situaciones de emergencia.</li>
+            </ul>
+        </div>
+
+        <!-- Experiencia 7: Especialista en Redes Eléctricas -->
+        <div style="margin-bottom:1rem;">
+            <div><span class="empresa">Empresa Eléctrica de Cuba</span> — <span class="cargo">Especialista en Redes y Sistemas Eléctricos</span></div>
+            <div class="fecha">Ciego de Ávila, Cuba · 10/2007 – 11/2010</div>
+            <ul class="descripcion">
+                <li>Diseño de redes de distribución eléctrica en AutoCAD (media y baja tensión).</li>
+                <li>Elaboración de proyectos y presupuestos conforme a normas cubanas.</li>
+                <li>Supervisión de instalaciones eléctricas verificando su ejecución técnica.</li>
+            </ul>
+        </div>
+
+        <!-- PROYECTOS DESTACADOS EN APERTURAS DE HOTELES Y OFICINAS CORPORATIVAS -->
+        <h3>🏨 Proyectos destacados en aperturas</h3>
+
+        <div style="margin-bottom:0.8rem;">
+            <div><span class="empresa">Grand Aston La Habana</span></div>
+            <div class="fecha">Apertura: marzo 2022 | 600 habitaciones | +1,000 dispositivos de red</div>
+            <ul class="descripcion">
+                <li>Participación directa como especialista principal informático en la apertura tecnológica del hotel, considerado el más avanzado de Cuba.</li>
+                <li>Administración integral, depuración y configuración de sistemas: servidores, virtualización, redes WiFi, IPTV, telefonía IP, cerraduras electrónicas y música IP.</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom:0.8rem;">
+            <div><span class="empresa">Grand Aston Cayo Paredón</span></div>
+            <div class="fecha">Apertura: noviembre 2022 | 635 habitaciones | +1,100 dispositivos de red</div>
+            <ul class="descripcion">
+                <li>Asesoría y capacitación al personal técnico responsable de la apertura.</li>
+                <li>Configuración y entrenamiento en redes GPON, fibra óptica, servidores, virtualización, IPTV, telefonía IP, WiFi, sistemas de acceso y música IP.</li>
+                <li>Supervisión de documentación técnica, planos de red, esquemas eléctricos y cumplimiento de normativas cubanas.</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom:0.8rem;">
+            <div><span class="empresa">Oficina Corporativa – Archipelago International (La Habana)</span></div>
+            <div class="fecha">Apertura: marzo 2023</div>
+            <ul class="descripcion">
+                <li>Miembro del equipo fundador de la sede corporativa en La Habana, Cuba.</li>
+                <li>Soporte informático, administrativo y técnico; implementación de sistemas de gestión, infraestructura tecnológica y organización documental.</li>
+                <li>Coordinación operativa con propiedades hoteleras y enlace con la sede central en Yakarta, Indonesia.</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom:0.8rem;">
+            <div><span class="empresa">Grand Aston Varadero</span></div>
+            <div class="fecha">Apertura: noviembre 2023 | 531 habitaciones | +950 dispositivos de red</div>
+            <ul class="descripcion">
+                <li>Asesoría y formación en administración de redes al personal técnico encargado de la apertura.</li>
+                <li>Configuración y capacitación en servidores, telefonía IP, IPTV, música IP y seguridad informática.</li>
+                <li>Coordinación de documentación de instalación y validación técnica conforme a regulaciones nacionales.</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom:0.8rem;">
+            <div><span class="empresa">Oficina Corporativa – Archipelago International (Punta Cana, RD)</span></div>
+            <div class="fecha">Apertura: 24 de mayo de 2024</div>
+            <ul class="descripcion">
+                <li>Asesoría remota al personal técnico local: redes eléctricas y de datos, telefonía IP, diseño arquitectónico en AutoCAD, presupuestos y configuración en la nube con infraestructura Meraki.</li>
+                <li>Supervisión de instalación remota de laptops, impresoras, sistemas IPTV y sala de conferencias.</li>
+                <li>Colaboración en promoción institucional: edición de videos y creación de redes sociales corporativas (Facebook e Instagram).</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom:0.8rem;">
+            <div><span class="empresa">Reserva Real by Harper – Bávaro, Punta Cana (RD)</span></div>
+            <div class="fecha">Apertura: 27 de agosto de 2025</div>
+            <ul class="descripcion">
+                <li>Asesoría remota en la apertura del hotel; coordinación de compra de equipos y diseños técnicos.</li>
+                <li>Administración de instalación de todas las PC y laptops con el sistema de gestión hotelera SENTEC (privativo de la cadena).</li>
+                <li>Capacitación del personal en el uso del sistema y de los especialistas que posteriormente operaron el sistema.</li>
+                <li>Supervisión de instalación remota de laptops, impresoras, sistemas de cerradura electrónica y equipamiento audiovisual; estimación de presupuestos para adquisición tecnológica.</li>
+            </ul>
+        </div>
+
+        <!-- FORMACIÓN ACADÉMICA -->
+        <h3>🎓 Formación académica</h3>
+        <div style="margin-bottom:0.3rem;">
+            <div><span class="empresa">Ingeniero Electricista</span></div>
+            <div class="fecha">Universidad Central "Marta Abreu" de Las Villas – Santa Clara, Cuba · 2002 – 2007</div>
+            <ul class="descripcion" style="font-size:0.88rem;">
+                <li>Asistente académico en los departamentos de Telemática, Automática e Ingeniería Eléctrica.</li>
+                <li>Formación complementaria en administración de redes y sistemas de cómputo en la Facultad de Cibernética.</li>
+                <li>Clases prácticas interfacultativas en la Facultad de Mecánica: diseño, control y dibujo técnico con AutoCAD.</li>
+                <li>Curso de preparación pedagógica (1 año): acreditación como Instructor General Integral.</li>
+                <li>Inglés técnico universitario (3 años): competencia laboral en el idioma.</li>
+            </ul>
+        </div>
+        <div style="margin-bottom:0.3rem;">
+            <div><span class="empresa">Ingeniero Informático</span> (estudios simultáneos)</div>
+            <div class="fecha">Universidad de La Habana · 2004 – 2009</div>
+        </div>
+        <div style="margin-bottom:0.3rem;">
+            <div><span class="empresa">Máster en Dirección de Proyectos (PMI)</span></div>
+            <div class="fecha">Universidad de La Habana · 2016 – 2018</div>
+        </div>
+        <div style="margin-bottom:0.3rem;">
+            <div><span class="empresa">Especialización en Infraestructura TI</span></div>
+            <div class="fecha">Instituto Superior Politécnico José Antonio Echeverría (ISPJAE) · 2019 – 2020</div>
+        </div>
+
+        <!-- FORMACIÓN COMPLEMENTARIA -->
+        <h3>📚 Formación complementaria</h3>
+        <ul style="padding-left:1.2rem; color:#1e1e1e; line-height:1.6; font-size:0.92rem;">
+            <li>Diseño de redes Wi-Fi de alta densidad – Ruckus Wireless (2023)</li>
+            <li>Administración de servidores Windows Server – Microsoft (2022)</li>
+            <li>Virtualización con VMware vSphere – VMware (2021)</li>
+            <li>Telefonía IP con 3CX – 3CX Academy (2020)</li>
+            <li>Iluminación LED y eficiencia energética – Philips (2020)</li>
+            <li>Diseño de instalaciones eléctricas con AutoCAD – CUJAE (2019)</li>
+            <li>Gestión de proyectos con MS Project – PMI Cuba (2018)</li>
+            <li>Seguridad informática y protección de datos – UCI (2017)</li>
+            <li>Reglamento Electrotécnico Cubano – Ministerio de Energía y Minas (2016)</li>
+            <li>SCADA y automatización industrial – Schneider Electric (2015)</li>
         </ul>
 
-        <!-- REFERENCIAS -->
-        <h3>📎 Referencias</h3>
-        <div class="referencias">
-            Disponibles a solicitud.
+        <!-- HERRAMIENTAS Y SOFTWARE ESPECIALIZADO -->
+        <h3>🛠️ Herramientas y software especializado</h3>
+
+        <div style="margin-top:0.3rem;">
+            <div style="font-weight:600; color:#1a1a1a; font-size:0.95rem;">Redes y Telecomunicaciones</div>
+            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top:0.2rem;">
+                <span class="badge">Cisco Packet Tracer</span>
+                <span class="badge">GNS3</span>
+                <span class="badge">Wireshark</span>
+                <span class="badge">Ruckus SmartZone</span>
+                <span class="badge">Aruba Central</span>
+                <span class="badge">Cisco DNA</span>
+                <span class="badge">D-Link</span>
+                <span class="badge">Allied Telesis</span>
+                <span class="badge">Nuclias Connect</span>
+                <span class="badge">PRTG</span>
+                <span class="badge">Zabbix</span>
+                <span class="badge">Nagios</span>
+                <span class="badge">SolarWinds</span>
+                <span class="badge">pfSense</span>
+                <span class="badge">MikroTik RouterOS</span>
+                <span class="badge">FortiGate</span>
+                <span class="badge">Cisco ASA</span>
+                <span class="badge">Meraki</span>
+            </div>
         </div>
+
+        <div style="margin-top:0.6rem;">
+            <div style="font-weight:600; color:#1a1a1a; font-size:0.95rem;">Diseño Eléctrico y BIM</div>
+            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top:0.2rem;">
+                <span class="badge">AutoCAD</span>
+                <span class="badge">AutoCAD Electrical</span>
+                <span class="badge">DraftSight</span>
+                <span class="badge">AutoLISP</span>
+                <span class="badge">Caneco BT</span>
+                <span class="badge">Eplan</span>
+                <span class="badge">ETAP (básico)</span>
+                <span class="badge">DIALux</span>
+                <span class="badge">Relux</span>
+                <span class="badge">Revit (básico)</span>
+                <span class="badge">Navisworks (básico)</span>
+            </div>
+        </div>
+
+        <div style="margin-top:0.6rem;">
+            <div style="font-weight:600; color:#1a1a1a; font-size:0.95rem;">Gestión de Proyectos</div>
+            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top:0.2rem;">
+                <span class="badge">MS Project</span>
+                <span class="badge">GanttProject</span>
+                <span class="badge">Jira</span>
+                <span class="badge">Confluence</span>
+                <span class="badge">Trello</span>
+                <span class="badge">Slack</span>
+                <span class="badge">SharePoint</span>
+                <span class="badge">Google Workspace</span>
+                <span class="badge">Office 365</span>
+            </div>
+        </div>
+
+        <div style="margin-top:0.6rem;">
+            <div style="font-weight:600; color:#1a1a1a; font-size:0.95rem;">Sistemas Operativos y Virtualización</div>
+            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top:0.2rem;">
+                <span class="badge">Windows Server (2012-2022)</span>
+                <span class="badge">Linux (Ubuntu, CentOS)</span>
+                <span class="badge">VMware vSphere</span>
+                <span class="badge">Proxmox</span>
+                <span class="badge">Hyper-V</span>
+                <span class="badge">Docker</span>
+                <span class="badge">Kubernetes (básico)</span>
+            </div>
+        </div>
+
+        <div style="margin-top:0.6rem;">
+            <div style="font-weight:600; color:#1a1a1a; font-size:0.95rem;">Desarrollo y Scripting</div>
+            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top:0.2rem;">
+                <span class="badge">Python</span>
+                <span class="badge">Bash</span>
+                <span class="badge">PowerShell</span>
+                <span class="badge">Shell</span>
+                <span class="badge">Ansible</span>
+                <span class="badge">Google Apps Script</span>
+                <span class="badge">Power Query (Excel)</span>
+                <span class="badge">SQL</span>
+                <span class="badge">Oracle</span>
+                <span class="badge">TeamViewer</span>
+                <span class="badge">AnyDesk</span>
+                <span class="badge">Zimbra</span>
+            </div>
+        </div>
+
+        <!-- INTELIGENCIA ARTIFICIAL APLICADA -->
+        <h3>🤖 Inteligencia Artificial Aplicada</h3>
+        <ul style="padding-left:1.2rem; color:#1e1e1e; line-height:1.6; font-size:0.92rem;">
+            <li>Uso estratégico de IA para automatizar tareas técnicas, sintetizar documentos, generar contenido institucional y optimizar procesos operativos.</li>
+            <li>Integración de modelos de lenguaje en flujos de trabajo, validación técnica y asistencia remota.</li>
+        </ul>
+
+        <!-- LOGROS DESTACADOS -->
+        <h3>🏆 Logros destacados</h3>
+        <ul style="padding-left:1.2rem; color:#1e1e1e; line-height:1.6; font-size:0.92rem;">
+            <li>Reducción del <strong>35 % en costes de hardware</strong> mediante virtualización.</li>
+            <li>Ahorro energético del <strong>18 % en 3 hoteles</strong> (proyecto de eficiencia).</li>
+            <li>Implementación de redes Wi-Fi con <strong>cobertura 100 %</strong> en hoteles de más de 500 habitaciones.</li>
+            <li>Migración exitosa de <strong>600+ extensiones</strong> a telefonía IP.</li>
+            <li><strong>0 incidentes</strong> de seguridad críticos en 6 años de gestión.</li>
+            <li>Gestión de proyectos con presupuesto global superior a <strong>1,5 M USD</strong>.</li>
+            <li>Formación de <strong>25 técnicos</strong> en mantenimiento de redes y sistemas eléctricos.</li>
+            <li>Certificaciones obtenidas: PMP, VCP, MCSA, CWNA (en curso).</li>
+            <li>Coordinación con proveedores internacionales (Cisco, Ruckus, HP, Schneider).</li>
+        </ul>
+
+        <!-- REFERENCIAS LABORALES -->
+        <h3>📎 Referencias laborales</h3>
+        <div style="font-size:0.92rem; line-height:1.7; color:#222;">
+            <p><strong>Nikolas E. R. Katuuk</strong> — Director of Business Development, SentinelTech / Archipelago International (Indonesia)<br />
+            <span style="color:#555;">nikolas.k@archipelagohotels.com</span> | +62 818 214611</p>
+
+            <p><strong>Heriberto Ramos Hernández</strong> — Condotel Manager, Reserva Real by Harper (Punta Cana, RD)<br />
+            <span style="color:#555;">reservarealcm@harperhotels.com</span> | +1 (829) 539-5555</p>
+
+            <p><strong>Argenis Guzman Castillo</strong> — Condotel Manager, ASTON Rubi City Suites (RD)<br />
+            <span style="color:#555;">rubicitysuitescm@astonhotelsinternational.com</span> | +1 (829) 774-0432</p>
+
+            <p><strong>Oscar Cartaya</strong> — Director Nacional de Informática, Grupo Gaviota (Cuba)<br />
+            <span style="color:#555;">director.informatica@gaviota.cu</span> | +53 5 2803112</p>
+
+            <p><strong>Félix Mercedes Alcalá</strong> — General Manager, GRAND ASTON Cayo Paredón (Cuba)<br />
+            <span style="color:#555;">+1 (829) 642-5708</span></p>
+
+            <p><strong>Juan Carlos Cores Fresco</strong> — General Manager, GRAND ASTON La Habana (Cuba)<br />
+            <span style="color:#555;">+1 (829) 345-5625</span></p>
+        </div>
+        <div class="referencias">Referencias adicionales disponibles a solicitud.</div>
+
+        <p style="margin-top:1.2rem; font-size:0.8rem; color:#888; border-top:1px solid #ddd; padding-top:0.8rem; text-align:center;">
+            Documento actualizado a agosto 2026
+        </p>
 
     </main>
 
