@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi CV</title>
+    <style>
+        /* ─── RESET & GLOBALES ─── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            background: #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        /* ─── TARJETA PRINCIPAL ─── */
+        .cv-container {
+            max-width: 1000px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        /* ─── COLUMNA IZQUIERDA (oscura) ─── */
+        .sidebar {
+            background: #2c2c2c;
+            color: #f0f0f0;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        /* ─── FOTO ─── */
+        .foto {
+            text-align: center;
+        }
+
+        .foto img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #aaaaaa;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background: #fff;
+        }
+
+        /* ─── TEXTO EN SIDEBAR ─── */
+        .sidebar h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #d0d0d0;
+            border-bottom: 2px solid #555;
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .sidebar .item {
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+
+        .sidebar .item strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .sidebar .item span {
+            color: #c0c0c0;
+            font-weight: 300;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #3d3d3d;
+            color: #d4d4d4;
+        }
+
+        .sidebar ul li:last-child {
+            border-bottom: none;
+        }
+
+        .habilidad-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #3d3d3d;
+        }
+
+        .habilidad-item .nombre {
+            color: #f0f0f0;
+        }
+
+        .habilidad-item .nivel {
+            color: #b0b0b0;
+            font-size: 0.85rem;
+        }
+
+        /* ─── COLUMNA DERECHA (clara) ─── */
+        .main {
+            background: #fcfcfc;
+            padding: 2rem 2.2rem;
+            color: #1e1e1e;
+        }
+
+        .main h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .main .titulo-profesion {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #d0d0d0;
+            padding-bottom: 0.8rem;
+        }
+
+        .main h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #222;
+            margin-top: 1.6rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.3px;
+            border-left: 5px solid #2c2c2c;
+            padding-left: 0.8rem;
+        }
+
+        .main h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .main .fecha {
+            font-weight: 300;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .main .empresa {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .main .cargo {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .main .descripcion {
+            margin-top: 0.2rem;
+            padding-left: 1rem;
+            list-style-type: disc;
+            color: #2b2b2b;
+        }
+
+        .main .descripcion li {
+            margin-bottom: 0.25rem;
+            line-height: 1.5;
+        }
+
+        .main .referencias {
+            font-style: italic;
+            color: #444;
+            margin-top: 0.3rem;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 720px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+                border-radius: 16px;
+            }
+
+            .sidebar {
+                text-align: center;
+                padding: 1.8rem 1.2rem;
+            }
+
+            .foto img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .main {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .main h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+
+    <!-- ========== COLUMNA IZQUIERDA ========== -->
+    <aside class="sidebar">
+
+        <!-- FOTO -->
+        <div class="foto">
+            <img src="yo2026.jpg" alt="Foto de perfil" />
+        </div>
+
+        <!-- CONTACTO -->
+        <div>
+            <h2>📌 CONTACTO</h2>
+            <div class="item"><strong>📞</strong> <span>+34 612 345 678</span></div>
+            <div class="item"><strong>✉️</strong> <span>ana.lopez@email.com</span></div>
+            <div class="item"><strong>📍</strong> <span>Madrid, España</span></div>
+            <div class="item"><strong>🔗</strong> <span>linkedin.com/in/ana-lopez</span></div>
+        </div>
+
+        <!-- HABILIDADES TÉCNICAS -->
+        <div>
+            <h2>⚙️ HARD SKILLS</h2>
+            <div class="habilidad-item">
+                <span class="nombre">Gestión de proyectos</span>
+                <span class="nivel">●●●●○</span>
+            </div>
+            <div class="habilidad-item">
+                <span class="nombre">Python / SQL</span>
+                <span class="nivel">●●●○○</span>
+            </div>
+            <div class="habilidad-item">
+                <span class="nombre">Power BI / Tableau</span>
+                <span class="nivel">●●●●○</span>
+            </div>
+            <div class="habilidad-item">
+                <span class="nombre">Adobe Suite</span>
+                <span class="nivel">●●●○○</span>
+            </div>
+        </div>
+
+        <!-- IDIOMAS -->
+        <div>
+            <h2>🌐 IDIOMAS</h2>
+            <ul>
+                <li><strong>Español</strong> — Nativo</li>
+                <li><strong>Inglés</strong> — C1 (Advanced)</li>
+                <li><strong>Francés</strong> — B1 (Intermedio)</li>
+            </ul>
+        </div>
+
+        <!-- SOFT SKILLS -->
+        <div>
+            <h2>🧠 SOFT SKILLS</h2>
+            <ul>
+                <li>Comunicación asertiva</li>
+                <li>Trabajo en equipo</li>
+                <li>Pensamiento crítico</li>
+                <li>Adaptabilidad</li>
+                <li>Liderazgo</li>
+            </ul>
+        </div>
+
+    </aside>
+
+    <!-- ========== COLUMNA DERECHA ========== -->
+    <main class="main">
+
+        <!-- NOMBRE + TÍTULO -->
+        <h1>Ana López</h1>
+        <div class="titulo-profesion">Project Manager &amp; Data Analyst</div>
+
+        <!-- PERFIL -->
+        <h3>📋 Perfil profesional</h3>
+        <p style="line-height:1.6; color:#2b2b2b;">
+            Profesional con <strong>6 años de experiencia</strong> en gestión de proyectos y análisis de datos.
+            Especializada en transformación digital y metodologías ágiles. Apasionada por optimizar
+            procesos y generar valor a partir de los datos.
+        </p>
+
+        <!-- EXPERIENCIA LABORAL -->
+        <h3>💼 Experiencia laboral</h3>
+
+        <div style="margin-bottom:1.2rem;">
+            <div><span class="empresa">TechSolutions S.L.</span> — <span class="cargo">Project Manager</span></div>
+            <div class="fecha">Ene 2021 – Actualidad · Madrid</div>
+            <ul class="descripcion">
+                <li>Lideré un equipo de 12 personas en la implementación de un CRM, reduciendo tiempos de respuesta en un 35%.</li>
+                <li>Coordiné la migración de datos a la nube, mejorando la disponibilidad y seguridad de la información.</li>
+                <li>Implementé metodologías ágiles (Scrum) aumentando la productividad del equipo en un 20%.</li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom:1.2rem;">
+            <div><span class="empresa">DataVision Corp.</span> — <span class="cargo">Data Analyst</span></div>
+            <div class="fecha">Ago 2018 – Dic 2020 · Barcelona</div>
+            <ul class="descripcion">
+                <li>Diseñé dashboards interactivos con Power BI para el área comercial, facilitando la toma de decisiones.</li>
+                <li>Realicé análisis de ventas que identificaron oportunidades de crecimiento, incrementando ingresos en un 12%.</li>
+                <li>Automaticé reportes semanales con Python, ahorrando 8 horas de trabajo manual cada semana.</li>
+            </ul>
+        </div>
+
+        <!-- EDUCACIÓN -->
+        <h3>🎓 Educación</h3>
+        <div>
+            <div><span class="empresa">Máster en Dirección de Proyectos</span></div>
+            <div class="fecha">Universidad Politécnica · 2020 – 2021</div>
+        </div>
+        <div style="margin-top:0.4rem;">
+            <div><span class="empresa">Ingeniería en Sistemas</span></div>
+            <div class="fecha">Universidad Complutense · 2014 – 2018</div>
+        </div>
+
+        <!-- CERTIFICACIONES -->
+        <h3>📜 Certificaciones</h3>
+        <ul style="padding-left:1.2rem; color:#2b2b2b; line-height:1.6;">
+            <li>Scrum Master (CertiProf, 2022)</li>
+            <li>Google Data Analytics Professional (Coursera, 2021)</li>
+            <li>Power BI Advanced (Microsoft, 2023)</li>
+        </ul>
+
+        <!-- REFERENCIAS -->
+        <h3>📎 Referencias</h3>
+        <div class="referencias">
+            Disponibles a solicitud.
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
